@@ -7,10 +7,10 @@ use File::Spec;
 BEGIN {
   $^W = 1;  # Use warnings
   my $curdir = File::Spec->canonpath( Cwd::cwd() );
-  my $is_same_dir = $^O eq 'MSWin32' ? (Win32::GetShortPathName($curdir) eq '/home/book/sources/perl/CPAN/acme-meta')
-                                       : ($curdir eq '/home/book/sources/perl/CPAN/acme-meta');
+  my $is_same_dir = $^O eq 'MSWin32' ? (Win32::GetShortPathName($curdir) eq '/home/book/sources/perl/CPAN/Acme-MetaSyntactic')
+                                       : ($curdir eq '/home/book/sources/perl/CPAN/Acme-MetaSyntactic');
   unless ($is_same_dir) {
-    die ('This script must be run from /home/book/sources/perl/CPAN/acme-meta, not '.$curdir."\n".
+    die ('This script must be run from /home/book/sources/perl/CPAN/Acme-MetaSyntactic, not '.$curdir."\n".
 	 "Please re-run the Build.PL script here.\n");
   }
   @INC = 
@@ -25,7 +25,7 @@ BEGIN {
      '/usr/lib/perl/5.8',
      '/usr/share/perl/5.8',
      '/usr/local/lib/site_perl',
-     '/home/book/sources/perl/CPAN/acme-meta'
+     '/home/book/sources/perl/CPAN/Acme-MetaSyntactic'
     );
 }
 
@@ -38,7 +38,7 @@ if (-e 'Build.PL' and not Module::Build->up_to_date("Build.PL", $0)) {
 # This should have just enough arguments to be able to bootstrap the rest.
 my $build = Module::Build->resume (
   properties => {
-    config_dir => '/home/book/sources/perl/CPAN/acme-meta/_build',
+    config_dir => '/home/book/sources/perl/CPAN/Acme-MetaSyntactic/_build',
   },
 );
 
