@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Acme-MetaSyntactic
-version: 0.13
+version: 0.14
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -11,10 +11,10 @@ requires:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.13
+    version: 0.14
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.13
+    version: 0.14
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::any:
@@ -45,6 +45,8 @@ provides:
     file: lib/Acme/MetaSyntactic/loremipsum.pm
   Acme::MetaSyntactic::phonetic:
     file: lib/Acme/MetaSyntactic/phonetic.pm
+  Acme::MetaSyntactic::pumpkings:
+    file: lib/Acme/MetaSyntactic/pumpkings.pm
   Acme::MetaSyntactic::pynchon:
     file: lib/Acme/MetaSyntactic/pynchon.pm
   Acme::MetaSyntactic::robin:
