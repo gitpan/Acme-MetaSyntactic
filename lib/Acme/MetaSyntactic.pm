@@ -6,7 +6,7 @@ use Carp;
 use File::Basename;
 use File::Spec;
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -98,9 +98,12 @@ sub load_data {
     my $fh;
     { no strict 'refs'; $fh = *{"$theme\::DATA"}{IO}; }
 
-    my $item = undef;
+    my $item;
+    my @items;
+    $$item = "";
     while(<$fh>) {
         /^#\s*(\w+.*)$/ && do {
+            push @items, $item;
             $item = $data;
             my $last;
             my @keys = split /\s+/, $1;
@@ -109,6 +112,12 @@ sub load_data {
             next;
         };
         $$item .= $_;
+    }
+    # clean up the items
+    for( @items, $item ) {
+        $$_ =~ s/\A\s*//;
+        $$_ =~ s/\s*\z//;
+        $$_ =~ s/\s+/ /g;
     }
     return $data;
 }
@@ -266,19 +275,23 @@ following data:
 
     # names
     bam zowie plonk
+    powie kapow
     # multi level
-    abc def
+      abc    def
+    # empty
     # multi lingual
     fr de
 
-C<load_data()> will return the following data structure:
+C<load_data()> will return the following data structure (the string
+is trimmed, newlines and duplicate whitespace characters are squashed):
 
     {
-        names => "bam zowie plonk\n",
+        names => "bam zowie plonk powie kapow",
         multi => {
-            level   => "abc def\n",
-            lingual => "fr de\n",
-        }
+            level   => "abc def",
+            lingual => "fr de",
+        },
+        empty => ""
     }
 
 For example, Acme::MetaSyntactic::List uses the single parameter C<names>
