@@ -5,8 +5,9 @@ use warnings;
 use Carp;
 use File::Basename;
 use File::Spec;
+use File::Glob;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -14,14 +15,13 @@ our %META;
 
 # fetch the list of standard themes
 {
-    my $dir = dirname( $INC{'Acme/MetaSyntactic.pm'} );
-    $dir =~ s/(\s)/\\$1/g; # protect against directories with whitespace
-    %META =
-      map { ( fileparse( $_, qr/\.pm$/ ) )[0] => 0 }
-      glob File::Spec->catfile( $dir, MetaSyntactic => "*.pm" );
-
-    # remove the non-theme subclasses (start with a Capital)
-    delete $META{$_} for grep /^[A-Z]/, keys %META;
+    my @themes;
+    for my $dir (@INC) {
+        $META{$_} = 0 for grep !/^[A-Z]/,    # remove the non-theme subclasses
+          map { ( fileparse( $_, qr/\.pm$/ ) )[0] }
+          File::Glob::bsd_glob(
+            File::Spec->catfile( $dir, qw( Acme MetaSyntactic *.pm ) ) );
+    }
 }
 
 # the functions actually hide an instance
@@ -105,18 +105,23 @@ sub load_data {
     my $item;
     my @items;
     $$item = "";
-    while(<$fh>) {
-        /^#\s*(\w+.*)$/ && do {
-            push @items, $item;
-            $item = $data;
-            my $last;
-            my @keys = split /\s+/, $1;
-            $last = $item,$item = $item->{$_} ||= {} for @keys;
-            $item = \( $last->{$keys[-1]} = "" );
-            next;
-        };
-        $$item .= $_;
+
+    {
+        local $_;
+        while (<$fh>) {
+            /^#\s*(\w+.*)$/ && do {
+                push @items, $item;
+                $item = $data;
+                my $last;
+                my @keys = split /\s+/, $1;
+                $last = $item, $item = $item->{$_} ||= {} for @keys;
+                $item = \( $last->{ $keys[-1] } = "" );
+                next;
+            };
+            $$item .= $_;
+        }
     }
+
     # clean up the items
     for( @items, $item ) {
         $$_ =~ s/\A\s*//;
