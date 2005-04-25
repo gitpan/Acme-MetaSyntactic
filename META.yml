@@ -1,72 +1,12 @@
----
-name: Acme-MetaSyntactic
-version: 0.18
-author:
-  - Philippe "BooK" Bruhat <book@cpan.org>
-abstract: Themed metasyntactic variables names
-license: perl
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Acme-MetaSyntactic
+version:      0.19
+version_from: lib/Acme/MetaSyntactic.pm
+installdirs:  site
 requires:
-  List::Util: 0
-  Test::More: 0
-provides:
-  Acme::MetaSyntactic:
-    file: lib/Acme/MetaSyntactic.pm
-    version: 0.18
-  'Acme::MetaSyntactic::':
-    file: lib/Acme/MetaSyntactic.pm
-    version: 0.18
-  Acme::MetaSyntactic::List:
-    file: lib/Acme/MetaSyntactic/List.pm
-  Acme::MetaSyntactic::Locale:
-    file: lib/Acme/MetaSyntactic/Locale.pm
-  Acme::MetaSyntactic::amber:
-    file: lib/Acme/MetaSyntactic/amber.pm
-  Acme::MetaSyntactic::any:
-    file: lib/Acme/MetaSyntactic/any.pm
-  Acme::MetaSyntactic::batman:
-    file: lib/Acme/MetaSyntactic/batman.pm
-  Acme::MetaSyntactic::browser:
-    file: lib/Acme/MetaSyntactic/browser.pm
-  Acme::MetaSyntactic::buffy:
-    file: lib/Acme/MetaSyntactic/buffy.pm
-  Acme::MetaSyntactic::crypto:
-    file: lib/Acme/MetaSyntactic/crypto.pm
-  Acme::MetaSyntactic::dancers:
-    file: lib/Acme/MetaSyntactic/dancers.pm
-  Acme::MetaSyntactic::dilbert:
-    file: lib/Acme/MetaSyntactic/dilbert.pm
-  Acme::MetaSyntactic::donmartin:
-    file: lib/Acme/MetaSyntactic/donmartin.pm
-  Acme::MetaSyntactic::elements:
-    file: lib/Acme/MetaSyntactic/elements.pm
-  Acme::MetaSyntactic::flintstones:
-    file: lib/Acme/MetaSyntactic/flintstones.pm
-  Acme::MetaSyntactic::foo:
-    file: lib/Acme/MetaSyntactic/foo.pm
-  Acme::MetaSyntactic::haddock:
-    file: lib/Acme/MetaSyntactic/haddock.pm
-  Acme::MetaSyntactic::hhgg:
-    file: lib/Acme/MetaSyntactic/hhgg.pm
-  Acme::MetaSyntactic::jamesbond:
-    file: lib/Acme/MetaSyntactic/jamesbond.pm
-  Acme::MetaSyntactic::loremipsum:
-    file: lib/Acme/MetaSyntactic/loremipsum.pm
-  Acme::MetaSyntactic::phonetic:
-    file: lib/Acme/MetaSyntactic/phonetic.pm
-  Acme::MetaSyntactic::pumpkings:
-    file: lib/Acme/MetaSyntactic/pumpkings.pm
-  Acme::MetaSyntactic::pynchon:
-    file: lib/Acme/MetaSyntactic/pynchon.pm
-  Acme::MetaSyntactic::python:
-    file: lib/Acme/MetaSyntactic/python.pm
-  Acme::MetaSyntactic::robin:
-    file: lib/Acme/MetaSyntactic/robin.pm
-  Acme::MetaSyntactic::shadok:
-    file: lib/Acme/MetaSyntactic/shadok.pm
-  Acme::MetaSyntactic::tld:
-    file: lib/Acme/MetaSyntactic/tld.pm
-  Acme::MetaSyntactic::toto:
-    file: lib/Acme/MetaSyntactic/toto.pm
-  Acme::MetaSyntactic::viclones:
-    file: lib/Acme/MetaSyntactic/viclones.pm
-generated_by: Module::Build version 0.26
+    List::Util:                    0
+    Test::More:                    0
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17
