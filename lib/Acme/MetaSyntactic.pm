@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -386,6 +386,12 @@ Here are the available behaviours:
 The theme is a simple collection of names. An object instance will
 return names at random from the list, and not repeat any until the list
 is exhausted.
+
+=item Acme::MetaSyntactic::Locale
+
+The theme is made of several collections of names, each associated with
+a "language". The language is either passed as a constructor parameter,
+extracted from the environment or a default is selected.
 
 =back
 
