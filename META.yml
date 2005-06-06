@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.24
+version: 0.25
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -11,10 +11,10 @@ requires:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.24
+    version: 0.25
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.24
+    version: 0.25
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -59,6 +59,8 @@ provides:
     file: lib/Acme/MetaSyntactic/magic8ball.pm
   Acme::MetaSyntactic::magicroundabout:
     file: lib/Acme/MetaSyntactic/magicroundabout.pm
+  Acme::MetaSyntactic::pasta:
+    file: lib/Acme/MetaSyntactic/pasta.pm
   Acme::MetaSyntactic::phonetic:
     file: lib/Acme/MetaSyntactic/phonetic.pm
   Acme::MetaSyntactic::pumpkings:
