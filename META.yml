@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.34
+version: 0.35
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -11,10 +11,10 @@ requires:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.34
+    version: 0.35
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.34
+    version: 0.35
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -49,6 +49,8 @@ provides:
     file: lib/Acme/MetaSyntactic/flintstones.pm
   Acme::MetaSyntactic::foo:
     file: lib/Acme/MetaSyntactic/foo.pm
+  Acme::MetaSyntactic::garbage:
+    file: lib/Acme/MetaSyntactic/garbage.pm
   Acme::MetaSyntactic::groo:
     file: lib/Acme/MetaSyntactic/groo.pm
   Acme::MetaSyntactic::haddock:
