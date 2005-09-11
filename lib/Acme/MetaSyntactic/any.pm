@@ -3,6 +3,8 @@ use strict;
 use List::Util 'shuffle';
 use Acme::MetaSyntactic ();
 
+our $Theme = 'any';
+
 sub import {
     # export the metaany function
     my $callpkg = caller;
@@ -24,6 +26,8 @@ sub new {
     # we need a full Acme::MetaSyntactic object, to support AMS::Locale
     return bless { meta => Acme::MetaSyntactic->new( @_ ) }, $class;
 }
+
+sub theme { $Theme };
 
 1;
 
@@ -55,6 +59,10 @@ useful for themes deriving from Acme::MetaSyntactic::Locale.
 =item name( $count )
 
 Implement the name() method for this class.
+
+=item theme()
+
+Return the theme name (C<any>).
 
 =back
 

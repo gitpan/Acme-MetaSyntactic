@@ -43,6 +43,7 @@ lib/Acme/MetaSyntactic/robin.pm
 lib/Acme/MetaSyntactic/services.pm
 lib/Acme/MetaSyntactic/shadok.pm
 lib/Acme/MetaSyntactic/simpsons.pm
+lib/Acme/MetaSyntactic/stars.pm
 lib/Acme/MetaSyntactic/teletubbies.pm
 lib/Acme/MetaSyntactic/tld.pm
 lib/Acme/MetaSyntactic/toto.pm
@@ -57,6 +58,7 @@ t/01load.t
 t/02fixme.t
 t/05class.t
 t/07data.t
+t/08theme.t
 t/10meta.t
 t/11namespace.t
 t/12fail.t
