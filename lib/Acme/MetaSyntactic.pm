@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.40';
+our $VERSION = '0.41';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -48,7 +48,7 @@ sub import {
 
     # load the classes in @themes
     for my $theme( @themes ) {
-        eval "require Acme::MetaSyntactic::$theme;";
+        eval "require Acme::MetaSyntactic::$theme; import Acme::MetaSyntactic::$theme;";
         croak $@ if $@;
         *{"$callpkg\::meta$theme"} = sub { $meta->name( $theme, @_ ) };
     }
