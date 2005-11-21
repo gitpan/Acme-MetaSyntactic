@@ -1,8 +1,11 @@
 package Acme::MetaSyntactic::Locale;
 use strict;
 use Acme::MetaSyntactic (); # do not export metaname and friends
+use Acme::MetaSyntactic::RemoteList;
 use List::Util qw( shuffle );
 use Carp;
+
+our @ISA = qw( Acme::MetaSyntactic::RemoteList );
 
 sub init {
     my $class = caller(0);
@@ -22,11 +25,19 @@ sub init {
         my $meta    = $class->new;
         *{"$callpkg\::meta$theme"} = sub { $meta->name(@_) };
       };
+
+    ${"$class\::meta"} = $class->new();
 }
 
 sub name {
     my ( $self, $count ) = @_;
     my $class = ref $self;
+
+    if( ! $class ) { # called as a class method!
+        $class = $self;
+        no strict 'refs';
+        $self = ${"$class\::meta"};
+    }
 
     if ( defined $count && $count == 0 ) {
         no strict 'refs';
