@@ -55,8 +55,10 @@ sub name {
     my $list = $self->{cache};
     {
         no strict 'refs';
-        push @$list, shuffle @{ ${"$class\::Locale"}{ $self->{lang} } }
-          while @$list < $count;
+        if( @{ ${"$class\::Locale"}{ $self->{lang} } } ) {
+            push @$list, shuffle @{ ${"$class\::Locale"}{ $self->{lang} } }
+              while @$list < $count;
+        }
     }
     splice( @$list, 0, $count );
 }
@@ -77,7 +79,7 @@ sub new {
         }
     }
     $self->{lang} = ${"$class\::Default"} unless $self->{lang};
-    $self->{lang} = substr( $self->{lang}, 0, 2 );
+    ($self->{lang}) = $self->{lang} =~ /^([-a-z]+)/;
 
     # fall back to last resort
     $self->{lang} = ${"$class\::Default"}

@@ -4,13 +4,20 @@ use Acme::MetaSyntactic::List;
 our @ISA = qw( Acme::MetaSyntactic::List );
 
 {
-    my $data = '';
-    if ( $] =~ /^5\.006/ ) {
-        $data = require 'unicode/Name.pl';
+    # a very basic list
+    my $data = join ' ',
+        map { ( "LATIN_CAPITAL_LETTER_$_", "LATIN_SMALL_LETTER_$_" ) }
+        'A' .. 'Z';
+
+    # try to find better
+    if ( $] >= 5.006 && $] < 5.007003  ) {
+        eval { $data = require 'unicode/Name.pl'; };
     }
-    elsif ( $] =~ /^5\.008/ ) {
-        $data = require 'unicore/Name.pl';
+    elsif ( $] >= 5.007003 ) {
+        eval { $data = require 'unicore/Name.pl'; };
     }
+
+    # clean up the list
     $data = join ' ',
         map  { s/ \(.*\)//; y/- /_/; $_ }
         grep { $_ ne '<control>' }    # what's this for a character name?
@@ -41,6 +48,9 @@ Thanks to Sébastien Aperghis-Tramoni for his help in finding
 F<unicore/Name.pl>.
 
 Introduced in version 0.50, published on November 28, 2005.
+
+Updated to support more Perl versions in version 0.51, published
+on December 5, 2005.
 
 =head1 SEE ALSO
 

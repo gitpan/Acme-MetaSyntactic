@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.50
+version: 0.51
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -9,13 +9,16 @@ requires:
   File::Glob: 0
   List::Util: 0
   Test::More: 0
+  perl: 5.006
+recommends:
+  LWP::UserAgent: 2
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.50
+    version: 0.51
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.50
+    version: 0.51
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -132,6 +135,8 @@ provides:
     file: lib/Acme/MetaSyntactic/unicode.pm
   Acme::MetaSyntactic::viclones:
     file: lib/Acme/MetaSyntactic/viclones.pm
+  Acme::MetaSyntactic::weekdays:
+    file: lib/Acme/MetaSyntactic/weekdays.pm
   Acme::MetaSyntactic::yapc:
     file: lib/Acme/MetaSyntactic/yapc.pm
 generated_by: Module::Build version 0.26
