@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.52
+version: 0.53
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -15,10 +15,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.52
+    version: 0.53
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.52
+    version: 0.53
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -93,6 +93,8 @@ provides:
     file: lib/Acme/MetaSyntactic/monty_spam.pm
   Acme::MetaSyntactic::octothorpe:
     file: lib/Acme/MetaSyntactic/octothorpe.pm
+  Acme::MetaSyntactic::opcodes:
+    file: lib/Acme/MetaSyntactic/opcodes.pm
   Acme::MetaSyntactic::oulipo:
     file: lib/Acme/MetaSyntactic/oulipo.pm
   Acme::MetaSyntactic::pasta:

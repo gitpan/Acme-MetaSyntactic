@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.52';
+our $VERSION = '0.53';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -148,13 +148,10 @@ sub name {
         ( $theme, $count ) = ( $self->{theme}, 1 );
     }
 
-    croak "Metasyntactic list $theme does not exist!"
-      unless exists $META{$theme};
-
-    unless( exists $self->{meta}{$theme} ) {
-        unless( $META{$theme} ) {
+    if( ! exists $self->{meta}{$theme} ) {
+        if( ! $META{$theme} ) {
             eval "require Acme::MetaSyntactic::$theme;";
-            croak $@ if $@;
+            croak "Metasyntactic list $theme does not exist!" if $@;
             $META{$theme} = 1; # loaded
         }
         $self->{meta}{$theme} =
@@ -184,7 +181,7 @@ Acme::MetaSyntactic - Themed metasyntactic variables names
     # this sets the default theme and loads Acme::MetaSyntactic::shadok
     my $meta = Acme::MetaSyntactic->new( 'shadok' );
     
-    print $meta->name;            # return a single name
+    print $meta->name();          # return a single name
     my @names = $meta->name( 4 ); # return 4 distinct names (if possible)
 
     # you can temporarily switch theme

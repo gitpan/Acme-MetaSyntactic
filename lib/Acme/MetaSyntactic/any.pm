@@ -8,7 +8,7 @@ our $Theme = 'any';
 sub import {
     # export the metaany function
     my $callpkg = caller;
-    my $meta    = Acme::MetaSyntactic::any->new;
+    my $meta    = Acme::MetaSyntactic::any->new();
     no strict 'refs';
     *{"$callpkg\::metaany"} = sub { $meta->name( @_ ) };
 }
@@ -16,7 +16,7 @@ sub import {
 sub name {
     my $self  = shift;
     my $theme =
-      ( shuffle( grep { !/^(?:any|random)$/ } Acme::MetaSyntactic->themes ) )[0];
+      ( shuffle( grep { !/^(?:any|random)$/ } Acme::MetaSyntactic->themes() ) )[0];
     $self->{meta}->name( $theme, @_ );
 }
 
@@ -35,7 +35,7 @@ sub has_remotelist { };
 
 =head1 NAME
 
-Acme::MetaSyntactic::any - Items from any theme.
+Acme::MetaSyntactic::any - Items from any theme
 
 =head1 DESCRIPTION
 
