@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.57
+version: 0.58
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -15,10 +15,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.57
+    version: 0.58
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.57
+    version: 0.58
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -137,6 +137,8 @@ provides:
     file: lib/Acme/MetaSyntactic/teletubbies.pm
   Acme::MetaSyntactic::tld:
     file: lib/Acme/MetaSyntactic/tld.pm
+  Acme::MetaSyntactic::tmnt:
+    file: lib/Acme/MetaSyntactic/tmnt.pm
   Acme::MetaSyntactic::toto:
     file: lib/Acme/MetaSyntactic/toto.pm
   Acme::MetaSyntactic::unicode:
