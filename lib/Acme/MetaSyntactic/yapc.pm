@@ -32,7 +32,7 @@ Belfast (2004), Braga (2005), Birmingham (2006).
 
 =item YAPC::Israel
 
-Haifa (2003),  Herzliya (2004, 2005).
+Haifa (2003),  Herzliya (2004, 2005), Netanya (2006).
 
 =item YAPC::Canada
 
@@ -50,6 +50,10 @@ Taipei (2004, 2005).
 
 Porto Alegre (2005).
 
+=item YAPC::Asia
+
+Tokyo (2006).
+
 =back
 
 =head1 CONTRIBUTOR
@@ -62,6 +66,8 @@ Updated by Abigail in version 0.47, published on November 7, 2005.
 
 Updated in version 0.49, published on November 21, 2005.
 
+Updated in version 0.59, published on January 30, 2006.
+
 =head1 SEE ALSO
 
 L<Acme::MetaSyntactic>, L<Acme::MetaSyntactic::List>.
@@ -72,9 +78,10 @@ __DATA__
 # names
 Pittsburgh Montreal Saint_Louis Boca_Raton Buffalo Toronto Chicago
 London Amsterdam Munich Paris Belfast Braga Birmingham
-Haifa Herzliya
+Haifa Herzliya Netanya
 Ottawa
 Merlbourne
 Tai_Pei
 Porto_Alegre
+Tokyo
 
