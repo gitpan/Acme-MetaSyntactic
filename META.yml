@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.63
+version: 0.64
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
@@ -15,10 +15,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.63
+    version: 0.64
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.63
+    version: 0.64
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
@@ -151,6 +151,8 @@ provides:
     file: lib/Acme/MetaSyntactic/tmnt.pm
   Acme::MetaSyntactic::toto:
     file: lib/Acme/MetaSyntactic/toto.pm
+  Acme::MetaSyntactic::trigan:
+    file: lib/Acme/MetaSyntactic/trigan.pm
   Acme::MetaSyntactic::unicode:
     file: lib/Acme/MetaSyntactic/unicode.pm
   Acme::MetaSyntactic::us_presidents:
