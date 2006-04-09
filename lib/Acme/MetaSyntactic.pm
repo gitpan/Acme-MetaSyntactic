@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.68';
+our $VERSION = '0.69';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -389,6 +389,14 @@ is exhausted.
 The theme is made of several collections of names, each associated with
 a "language". The language is either passed as a constructor parameter,
 extracted from the environment or a default is selected.
+
+=item C<Acme::MetaSyntactic::MultiList>
+
+The theme is made of several collections of names, each associated with
+a "category". Categories can include sub-categories, etc, I<ad infinitum>
+(or when disk space or memory is exhausted, whichever happens first).
+The category is either passed as a constructor parameter or the default
+value is selected.
 
 =back
 

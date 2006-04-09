@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.68
+version: 0.69
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -15,14 +15,16 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.68
+    version: 0.69
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.68
+    version: 0.69
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
   Acme::MetaSyntactic::Locale:
     file: lib/Acme/MetaSyntactic/Locale.pm
+  Acme::MetaSyntactic::MultiList:
+    file: lib/Acme/MetaSyntactic/MultiList.pm
   Acme::MetaSyntactic::RemoteList:
     file: lib/Acme/MetaSyntactic/RemoteList.pm
   Acme::MetaSyntactic::alphabet:
@@ -127,6 +129,8 @@ provides:
     file: lib/Acme/MetaSyntactic/pop2.pm
   Acme::MetaSyntactic::pop3:
     file: lib/Acme/MetaSyntactic/pop3.pm
+  Acme::MetaSyntactic::pornstars:
+    file: lib/Acme/MetaSyntactic/pornstars.pm
   Acme::MetaSyntactic::pumpkings:
     file: lib/Acme/MetaSyntactic/pumpkings.pm
   Acme::MetaSyntactic::punctuation:

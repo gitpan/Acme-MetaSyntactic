@@ -1,51 +1,13 @@
-use Test::More tests => 19;
+use Test::More tests => 7;
 use strict;
+use Cwd;
 
-{ eval "require LWP::UserAgent;"; }
+{eval "require LWP::UserAgent;";}
 my $has_lwp = !$@;
-
-# test the helper subs
-is( Acme::MetaSyntactic::RemoteList::tr_accent('a é ö ì À + ='),
-    'a e o i A + =', 'tr_accent' );
-is( Acme::MetaSyntactic::RemoteList::tr_nonword('a;Aö"1À +='),
-    'a_A__1____', 'tr_nonword' );
-
-# theme without a remote list
-use Acme::MetaSyntactic::shadok ();
-ok( ! Acme::MetaSyntactic::shadok->has_remotelist(),
-    "No remote list for shadok" );
-is( Acme::MetaSyntactic::shadok->source(), undef, 'shadok source() empty' );
-
-my $shadok = Acme::MetaSyntactic::shadok->new();
-ok( ! $shadok->has_remotelist(), 'No remote list for shadok object' );
-is( $shadok->source(), undef, 'shadok object source() empty' );
-
-# try to get the list anyway
-SKIP: {
-    skip "LWP::UserAgent required to test remote_list()", 1 if !$has_lwp;
-    is( $shadok->remote_list(), undef, 'No remote list for shadok object' );
-}
-
-# default version of extract
-is( $shadok->extract( 'zlonk aieee' ), 'zlonk aieee', "Default extract()" );
-
-
-# theme with a remote list
-use Acme::MetaSyntactic::dilbert ();
-ok( Acme::MetaSyntactic::dilbert->has_remotelist(),
-    'dilbert has a remote list' );
-is( Acme::MetaSyntactic::dilbert->source(),
-    'http://www.triviaasylum.com/dilbert/diltriv.html',
-    'dilbert source()'
-);
-
-my $dilbert = Acme::MetaSyntactic::dilbert->new();
-ok( $dilbert->has_remotelist(), 'dilbert object has a remote list' );
-is( $dilbert->source(), 'http://www.triviaasylum.com/dilbert/diltriv.html',
-    'dilbert source()' );
 
 # these tests must be run after the test module has been loaded
 END {
+    # test for multiple remote lists
     ok( Acme::MetaSyntactic::dummy->has_remotelist,
         'dummy has a remote list' );
 
@@ -80,14 +42,15 @@ EOC
         );
 
         # test failing network
-        $Acme::MetaSyntactic::dummy::Remote{source} = 'fail';
+        $Acme::MetaSyntactic::dummy::Remote{source}
+            = [ 'fail', 'file://' . cwd() . '/t/remote2' ];
         is_deeply( [ $dummy->remote_list() ],
             [], 'Empty list when network fails' );
     }
 
 }
 
-# a test package
+# a test package (with 2 lists)
 package Acme::MetaSyntactic::dummy;
 use strict;
 
@@ -97,10 +60,11 @@ use Cwd;
 
 # data regarding the updates
 our %Remote = (
-    source  => 'file://' . cwd() . '/t/remote',
+    source =>
+        [ 'file://' . cwd() . '/t/remote1', 'file://' . cwd() . '/t/remote2' ],
     extract => sub {
         my $content = shift;
-        my @items       =
+        my @items   =
             map { Acme::MetaSyntactic::RemoteList::tr_nonword($_) }
             map { Acme::MetaSyntactic::RemoteList::tr_accent($_) }
             $content =~ /^\* (.*?)\s*$/gm;
