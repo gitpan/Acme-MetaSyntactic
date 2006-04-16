@@ -40,6 +40,14 @@ Sébastien Aperghis-Tramoni.
 
 Introduced in version 0.69, published on April 10, 2006.
 
+Updates from Wikipedia:
+
+=over 4
+
+=item version 0.70, published on April 17, 2006
+
+=back
+
 =head1 SEE ALSO
 
 L<Acme::MetaSyntactic>, L<Acme::MetaSyntactic::MultiList>.
@@ -244,6 +252,7 @@ Dasha
 Debi_Diamond
 Deborah_Wells
 Deidre_Holland
+Demi_Marx
 Desirae
 Desiree_Cousteau
 Desiree_West
@@ -335,6 +344,7 @@ Jasmine_Byrne
 Jasmine_Kerry
 Jasmine_Lynn
 Jassie_James
+Jay_Star
 Jayna_Oso
 Jeanna_Fine
 Jelena_Jensen
@@ -351,7 +361,7 @@ Jewel_De_Nyle
 Jezebelle_Bond
 Jill_Kelly
 Joanne_Jo_Guest
-Johnnie_Black
+Johnni_Black
 Jordan_Capri
 Jordan_Lee
 Jody_Moore
@@ -448,11 +458,13 @@ Logan_LaBrent
 Lois_Ayres
 Lolo_Ferrari
 Loni_Sanders
+Loretta_Loren
 Lori_Alexia
 Lucy_Lee
 Lucy_Thai
 Luna_Lane
 Lyla_Lei
+Mai_Lee
 Mai_Lin
 Maia_Ginger
 Madison_Stone
@@ -531,6 +543,7 @@ Olivia_O_Lovely
 Olivia_Saint
 Ona_Zee
 Ovidie
+Paizley_Adams
 Pamela_Anderson
 Pandora_Dreams
 Pandora_Peaks
