@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.73';
+our $VERSION = '0.74';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -422,7 +422,7 @@ C<Acme::MetaSyntactic::Locale>), or a new one of your invention).
 
 Individual contributors are listed in the individual theme files.
 Look at the included F<CONTRIBUTORS> file for the list of all
-contributors (35 in this version).
+contributors (36 in this version).
 
 However, this module could not have been possible without:
 
