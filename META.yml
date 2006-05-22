@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Acme-MetaSyntactic
-version: 0.74
+version: 0.75
 author:
   - Philippe "BooK" Bruhat <book@cpan.org>
 abstract: Themed metasyntactic variables names
