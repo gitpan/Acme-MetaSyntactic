@@ -54,6 +54,8 @@ Updates from Wikipedia:
 
 =item version 0.75, published on May 22, 2006
 
+=item version 0.79, published on June 19, 2006
+
 =back
 
 =head1 SEE ALSO
@@ -68,28 +70,32 @@ Adara_Michaels
 Adele_Stevens
 Adriana_Sage
 Adrienne_Bellaire
-Africa_Sexx
+Africa_Sexxx
 Ai_Iijima
 Aimee_Sweet
 Aja
 Akira_Fubuki
 Alana_Evans
 Alaura_Eden
+Alex_Dane
 Alex_Jordan
 Alex_Taylor
 Alexa_May
 Alexa_Rae
+Alexa_Weix
 Alexandra_Nice
 Alexandra_Silk
 Alexis_Amore
 Alexis_Malone
 Alexis_DeVell
+Alicia_Alighatti
 Alicia_Monet
 Alicia_Rhodes
 Alicia_Rio
 Alisha_Klass
 Alison_Angel
-Aliyah_Likit
+Aliyah_Yi
+Allie
 Allie_Sin
 Allison_Wyte
 Ally_Mac_Tyana
@@ -109,6 +115,8 @@ Angel_Long
 Angel_Kelly
 Angela_Baron
 Angela_Devi
+Angela_Haze
+Angela_Tiger
 Angelica_Bella
 Angelica_Costello
 Angelica_Sin
@@ -124,8 +132,10 @@ Anna_Ohura
 Annabel_Chong
 Anne_Howe
 Annette_Haven
+Annie_Cruz
 Annie_Sprinkle
 Annie_Swanson
+April_Summers
 Arcadia_Lake
 Aria_Giovanni
 Ariana_Jollee
@@ -166,6 +176,7 @@ Bianca_Trump
 Bibi_Fox
 Bianca_Pureheart
 Bionca
+Black_Widow
 Blair_Segal
 Blondie_Bee
 Bobbi_Billard
@@ -173,7 +184,9 @@ Bobbi_Eden
 Bodil_Joensen
 Bonita_Saint
 Boo_D_Licious
+Brandi_Love
 Brandi_Lyons
+Brandi_Wine
 Brandy_Alexandre
 Brandy_Bosworth
 Breanne
@@ -181,6 +194,7 @@ Briana_Banks
 Brianna_Rai
 Bridget_the_Midget_Powerz
 Bridgette_Kerkove
+Bridgette_Monroe
 Brigitte_Lahaie
 Brittany_Andrews
 Brittany_Blue
@@ -219,14 +233,18 @@ Celia_Blanco
 Charlene_Aspen
 Charlie_Angel
 Charlie
+Charlotte_Stokely
+Champagne
 Charmane_Star
 Chasey_Lain
 Chaz
 Chelsea_Charms
+Cherokee
 Cherie
 Cherry_Poppens
 Cherry_Potter
 Cherry_Rain
+Cherry_Rose
 Chessie_Moore
 Cheyenne_Silver
 Chloe
@@ -236,6 +254,7 @@ Chloe_Vevrier
 Chocolate
 Chris_Cassidy
 Christi_Lake
+Christie_Lee
 Christina_Noir
 Christine_Young
 Christy_Canyon
@@ -249,6 +268,7 @@ Claudia_Rossi
 Claudine_Beccarie
 Constance_Money
 Corina_Taylor
+Cris_Cassidy
 Cris_Taliana
 Crissy_Cums
 Crissy_Moran
@@ -261,6 +281,7 @@ Crystal_Ray
 Crystal_Steal
 Cyndee_Summers
 Cytherea
+Daisy_Marie
 Dana_Dylan
 Dana_Lynn
 Dana_Vespoli
@@ -270,6 +291,7 @@ Daphne_Rosen
 Darla_Crane
 Dasani_Lezian
 Dasha
+Deauxma
 Debi_Diamond
 Deborah_Wells
 Deidre_Holland
@@ -277,6 +299,7 @@ Demi_Marx
 Desirae
 Desiree_Cousteau
 Desiree_West
+Destiny_Deville
 Destiny_Summers
 Deven_Davis
 Devin_DeRay
@@ -289,6 +312,7 @@ Diva
 Dolly_Buster
 Dominique_Dewitt
 Dominique_Simone
+Domino
 Donita_Dunes
 Dora_Venter
 Dorothy_Le_May
@@ -303,9 +327,11 @@ Erica_Boyer
 Erica_Campbell
 Estelle_Desanges
 Eva_Angelina
+Eva_Black
 Eva_Henger
 Eve_Angel
 Eve_Laurence
+Evelyn_Lory
 Fallon
 Felecia
 Felecia_Fox
@@ -314,6 +340,7 @@ Felix_Vicious
 Flame
 Flick_Shagwell
 Flower_Tucci
+Fovea
 Friday
 Fujiko_Kano
 Gail_Lawrence
@@ -333,14 +360,16 @@ Ginger_Lynn
 Gloria_Guida
 Gloria_Leonard
 Gwen_Summers
+Haley_Paige
 Hannah_Harper
 Haven
 Heather_Hunter
 Helga_Sven
 Hillary_Scott
 Holly_Body
+Holly_McCall
 Holly_Page
-Haley_Paige
+Holly_Wellin
 Honey_Wilder
 Houston
 Hyapatia_Lee
@@ -348,6 +377,7 @@ Ice_La_Fox
 Inari_Vachs
 India
 Isabella_Camille
+Isabella_Soprano
 Isis_Nile
 JR_Carrington
 Jackie_Ashe
@@ -368,7 +398,6 @@ Janey_Robbins
 Janine_Lindemulder
 Jasmin_St_Claire
 Jasmine_Byrne
-Jasmine_Kerry
 Jasmine_Lynn
 Jassie_James
 Jaye_Starr
@@ -378,8 +407,10 @@ Jelena_Jensen
 Jenna_Haze
 Jenna_Jameson
 Jennifer_Andersson
+Jennifer_Luv
 Jennifer_Noxt
 Jenteal
+Jesse_Capelli
 Jesse_Jane
 Jessica_Darlin
 Jessica_Dee
@@ -390,33 +421,39 @@ Jezebelle_Bond
 Jill_Kelly
 Joanne_Jo_Guest
 Johnni_Black
+Joelean
 Jordan_Capri
 Jordan_Lee
 Jodie_Moore
 Jordan_Haze
+Joy_Kiss
 Judy_Star
+Juli_Ashton
 Julia_Ann
 Julia_Bond
-Juli_Ashton
-Julie_Night
 Julia_Channel
 Julia_Parton
 Julie_Meadows
+Julie_Night
+Julie_Silver
 Julie_Strain
 Juliet_Anderson
 Justine_Joli
 Kacey
 Kaitlyn_Ashley
+Kandi_Barbour
+Kara_Mynor
 Karen_Dior
 Karen_Lancaume
 Karin_Schubert
 Karina_Kay
+Karen_Summers
 Kascha_Papillon
 Katrina_Kraven
 Katalyn_Cica
 Kate_Frost
+Katerina_Konec
 Kathy_Willets
-Katie_Fey
 Katie_Gold
 Katie_Morgan
 Katja_Kean
@@ -438,6 +475,8 @@ Kelly_O_Dell
 Kelly_Stafford
 Kelly_Trump
 Kelly_Wells
+Kelly_Fuckin__Wells
+Kelsey_Michaels
 Keisha
 Keri_Sable
 Kerry_Marie
@@ -446,7 +485,9 @@ Kikki_Daire
 Kiko_Wu
 Kim_Angeli
 Kim_Chambers
+Kim_Eternity
 Kim_Holland
+Kimberly_Carson
 Kinky_Celine
 Kinzie_Kenner
 Kira_Kener
@@ -454,6 +495,7 @@ Kitten_Natividad
 Kitty_Marie
 Kitty_Yung
 Kobe_Tai
+Krista_Lane
 Kristara_Barrington
 Krystal_de_Boor
 Krysti_Lynn
@@ -472,12 +514,15 @@ Lauren_Phoenix
 Layla_Jade
 Leanni_Lei
 Lea_De_Mae
+Lea_Walker
 Leanna_Foxxx
 Leanna_Heart
 Leena
 Lene_Hefner
 Leslie_Bovee
+Letha_Weapons
 Lexie_Marie
+Lexus_Locklear
 Lily_Thai
 Lilian_Lee
 Lillian_Tiger
@@ -498,26 +543,33 @@ Logan_LaBrent
 Lois_Ayres
 Lolo_Ferrari
 Loni_Sanders
+Lorelei
 Loretta_Loren
 Lori_Alexia
+Lou_Valmont
+Lucie_Stratilova
 Lucy_Lee
 Lucy_Thai
 Luna_Lane
 Lyla_Lei
+Lynda_Leigh
 Mai_Lee
 Mai_Lin
 Maia_Ginger
 Madison_Stone
+Mandi_Wine
 Mandy_Bright
 Maria_Tortuga
 Mariah_Kekkonen
 Marilyn_Chambers
+Marketa_Brymova
 Mary_Anne
 Mary_Carey
 Mary_Millington
 Marylin_Star
 Maya_Gold
 McKayla_Matthews
+Megan_Jones
 Megan_Leigh
 Melanie_Jagger
 Melissa_Ashley
@@ -527,6 +579,7 @@ Melissa_Milano
 Melissa_Walker
 Melody_Love
 Melody_Max
+Mercedes
 Mercedez
 Mia_Smiles
 Michaela_Schaffrath
@@ -537,9 +590,9 @@ Michelle_Thorne
 Michelle_Wild
 Micka_French
 Mika_Tan
-Mike_Mulhall
 Miko_Lee
 Mimi_Miyagi
+MIndy_Rae
 Mindy_Vega
 Minka
 Miriam_Gonzalez
@@ -550,6 +603,7 @@ Misty_Rain
 Moana_Pozzi
 Mocha
 Molly_Rome
+Mona_Lisa
 Monica_Cameron
 Monica_Mayhem
 Monica_Sweet
@@ -565,6 +619,7 @@ Naughty_Alysha
 Nena_Cherry
 Nichola_Holt
 Nicole_Sheridan
+Nicole_Lace
 Nici_Sterling
 Nikita_Denise
 Nikki_Anderson
@@ -573,6 +628,7 @@ Nikky_Blond
 Nikki_Carlisle
 Nikki_Charm
 Nikki_Dial
+Nikki_Fairchild
 Nikki_Fritz
 Nikki_Hunter
 Nikki_Knights
@@ -598,6 +654,7 @@ Pandora_Dreams
 Pandora_Peaks
 Pason
 Paris_Hilton
+Paris_Showers
 Penelope_Black_Diamond
 Penny_Flame
 Penny_Porsche
@@ -607,7 +664,6 @@ Pixie
 PJ_Sparxx
 Poppy_Morgan
 Porsche_Lynn
-Priya_Rai
 Rachel_Aziani
 Rachel_Rotten
 Rachel_Ryan
@@ -620,6 +676,7 @@ Rayveness
 Rebecca_Cummings
 Rebecca_Lord
 Reika
+Rene_Bond
 Rene_Tiffany
 Renee_LaRue
 Renee_Pornero
@@ -652,6 +709,7 @@ Savannah
 Seka
 Selen
 Selena_Silver
+Selena_Steele
 Serena
 Serenity
 Shakina_Shergold
@@ -669,12 +727,13 @@ Sierra
 Silvia_Saint
 Silvie_Thomas
 Simone
+Simone_Style
 Simony_Diamond
 Sindee_Coxx
+Sinderella
 Sin_Eye
 Sky_Lopez
 Skylar_Knight
-Sonia_Jensen
 Sophia_Ferrari
 Sophia_Rossi
 Sophie_Evans
@@ -688,12 +747,13 @@ Stephanie_Bellars
 Stephanie_Swift
 Stormy
 Summer_Cummings
+Summer_Lynn
 Sunny_Leone
 Sunrise_Adams
 Sunshine_Nee
 Sunset_Thomas
 Susan_Nero
-Suzi_Suzuki
+Swan
 Sweet_Amy_Lee
 Sydney_Moon
 T_J_Hart
@@ -705,6 +765,7 @@ Tammi_Ann
 Tania_Russof
 Tianna
 Tanya_Hansen
+Tanya_James
 Tawnee_Stone
 Tawny_Roberts
 Taylor_Hayes
@@ -719,6 +780,7 @@ Temptress
 Tera_Heart
 Tera_Patrick
 Teresa_May
+Teresa_Scott
 Teri_Diver
 Teri_Weigel
 Terri_Summers
@@ -731,6 +793,7 @@ Tiffany_May
 Tiffany_Million
 Tiffany_Mynx
 Tiffany_Rayne
+Tiffany_Rose
 Tiffany_Teen
 Tiffany_Towers
 Tiffany_Walker
@@ -749,12 +812,15 @@ Trixie_Teen
 Tyla_Wynn
 Tyler_Faith
 Uschi_Digard
+Valentina_Vaughn
 Vanessa_Blue
 Vanessa_Del_Rio
 Vanessa_Lane
+Vanessa_McKenzie
 Velicity_Von
 Velvet_Rose
 Venus
+Veronica_Carso
 Veronica_Hart
 Veronica_Stark
 Veronika_Raquel
@@ -762,6 +828,7 @@ Veronika_Zemanova
 Vicky_Vette
 Victoria_Givens
 Victoria_Knight
+Victoria_Paris
 Victoria_Zdrok
 Victoria_Sweet
 Vida_Garman
@@ -784,7 +851,6 @@ Alain_Deloin
 Alberto_Rey
 Alec_Metro
 Ales_Hanak
-Alex_Fawkes
 Alex_Rox
 Alexander_Devoe
 Alexandre_Frota
@@ -837,6 +903,7 @@ David_Christopher
 David_Cahse
 David_Perry
 David_Ruby
+Deep_Threat
 Devlin_Weed
 Dez
 Dick_Dashton
@@ -856,6 +923,7 @@ Eric_Price
 Erik_Everhard
 Etienne_Jaumillot
 Evan_Stone
+Frankie_Jay
 Falcon_X
 Ficky_Martin
 FM_Bradley
@@ -863,6 +931,7 @@ Francesco_Malcom
 Franco_Roccaforte
 Franco_Trentalance
 Francois_Papillon
+Frank_Gun
 Frank_Major
 Frank_Shaft
 Frank_Towers
@@ -911,12 +980,14 @@ Jean_Yves_LeCastel
 Jeff_Stryker
 Jeremy_Tucker
 Jerry_Butler
+J_J_Michaels
 Joachim_Kessef
 Joel_Lawrence
 Joey_Ray
 Joey_Silvera
 John_Dough
 John_Holmes
+John_Leslie
 Johnny_Nineteen
 John_Slovak
 John_Stagliano
@@ -933,6 +1004,7 @@ Julian_St_Jox
 Justin_Berry
 Justin_Slayer
 Kato_Kalin
+Keith_Little_Big_Horn_Comfort
 Ken_Ryker
 Kid_Jamaica
 Kurt_Lockwood
@@ -977,7 +1049,6 @@ Matt_Bixel
 Neeo
 Pascal_Saint_James
 Pat_Myne
-Fabian
 Paul_Barresi
 Paul_Cox
 Paul_Thomas
@@ -999,6 +1070,7 @@ Ricardo_Bell
 Richard_Langin
 Rich_Handsome
 Rick_Masters
+Rick_Lee
 Rob_Rotten
 Robbie_James
 Robert_Darcy
@@ -1027,7 +1099,6 @@ Simon_Rex
 Skunk_Riley
 Sledge_Hammer
 Stephen_Wolfe
-Sparky_O_Toole
 Steve_Holmes
 Steve_Hooper
 Steve_York
@@ -1041,7 +1112,7 @@ Tony_DeSergio
 Tony_Everready
 Tony_Martino
 Tony_Michaels
-Tony_Ribas
+Toni_Ribas
 Tony_Tedeschi
 Tony_Sexton
 Trent_Tesoro
