@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.84
+version: 0.85
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.84
+    version: 0.85
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.84
+    version: 0.85
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -184,8 +184,6 @@ provides:
     file: lib/Acme/MetaSyntactic/tld.pm
   Acme::MetaSyntactic::tmnt:
     file: lib/Acme/MetaSyntactic/tmnt.pm
-  Acme::MetaSyntactic::toto:
-    file: lib/Acme/MetaSyntactic/toto.pm
   Acme::MetaSyntactic::tour_de_france:
     file: lib/Acme/MetaSyntactic/tour_de_france.pm
   Acme::MetaSyntactic::trigan:
