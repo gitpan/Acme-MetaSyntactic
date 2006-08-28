@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.88
+version: 0.89
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.88
+    version: 0.89
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.88
+    version: 0.89
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -126,6 +126,8 @@ provides:
     file: lib/Acme/MetaSyntactic/pantagruel.pm
   Acme::MetaSyntactic::pasta:
     file: lib/Acme/MetaSyntactic/pasta.pm
+  Acme::MetaSyntactic::pause_id:
+    file: lib/Acme/MetaSyntactic/pause_id.pm
   Acme::MetaSyntactic::peanuts:
     file: lib/Acme/MetaSyntactic/peanuts.pm
   Acme::MetaSyntactic::pgpfone:
