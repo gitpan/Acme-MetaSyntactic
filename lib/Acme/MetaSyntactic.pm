@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '0.90';
+our $VERSION = '0.91';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -113,7 +113,7 @@ sub load_data {
                 push @items, $item;
                 $item = $data;
                 my $last;
-                my @keys = split /\s+/, $1;
+                my @keys = split m!\s+|\s*/\s*!, $1;
                 $last = $item, $item = $item->{$_} ||= {} for @keys;
                 $item = \( $last->{ $keys[-1] } = "" );
                 next;
@@ -427,7 +427,7 @@ C<Acme::MetaSyntactic::Locale>), or a new one of your invention).
 
 Individual contributors are listed in the individual theme files.
 Look at the included F<CONTRIBUTORS> file for the list of all
-contributors (40 in this version).
+contributors (42 in this version).
 
 However, this module could not have been possible without:
 

@@ -54,11 +54,27 @@ C<au/vienna>: Vienna, Austria, 5 lines.
 
 C<pt/porto>: Port, Portugal, 4 lines.
 
+=item * 
+
+C<us/chicago>: Chicago, United States, 8 lines.
+
+=item *
+
+C<uk/london>: London, United Kingdom, 12 lines.
+
+=item *
+
+C<nl/rotterdam>: Rottedam, Netherlands, 2 lines.
+
+=item *
+
+C<ca/toronto>: Toronto, Canada, 4 lines.
+
 =back
 
-Note: the London underground is not included (mostly due to lack of time
-for research), but I certainly expect someone to send me a patch for it.
-C<;-)>
+According to Abigail, the addition of the London Tube stations to
+C<Acme::MetaSyntactic> makes for another milestone: we can now use B<meta>
+to play I<Mornington Crescent>.
 
 =head1 CONTRIBUTOR
 
@@ -68,6 +84,10 @@ Introduced in version 0.83, published on July 17, 2006.
 
 Updated with station names for Lyon, Marseille, Lille, Rennes (with
 stations grouped by line) in version 0.88, published on August 21, 2006.
+
+Updated by Elliot Shank with the Chicago metro and by Abigail with
+the London Tube, Rotterdam and Toronto metro lines in version 0.91,
+published on September 11, 2006.
 
 =head1 DEDICATION
 
@@ -83,7 +103,7 @@ L<Acme::MetaSyntactic>, L<Acme::MetaSyntactic::MultiList>.
 __DATA__
 # default
 fr/paris
-# names fr/paris/ligne_1
+# names fr paris ligne_1
 La_Defense_Grande_Arche
 Esplanade_de_la_Defense
 Pont_de_Neuilly
@@ -109,7 +129,7 @@ Porte_de_Vincennes
 Saint_Mande
 Berault
 Chateau_de_Vincennes
-# names fr/paris/ligne_2
+# names fr paris ligne_2
 Porte_Dauphine
 Victor_Hugo
 Charles_de_Gaulle_Etoile
@@ -135,7 +155,7 @@ Philippe_Auguste
 Alexandre_Dumas
 Avron
 Nation
-# names fr/paris/ligne_3
+# names fr paris ligne_3
 Pont_de_Levallois_Becon
 Anatole_France
 Louise_Michel
@@ -161,12 +181,12 @@ Pere_Lachaise
 Gambetta
 Porte_de_Bagnolet
 Gallieni
-# names fr/paris/ligne_3bis
+# names fr paris ligne_3bis
 Porte_des_Lilas
 Saint_Fargeau
 Pelleport
 Gambetta
-# names fr/paris/ligne_4
+# names fr paris ligne_4
 Porte_de_Clignancourt
 Simplon
 Marcadet_Poissonniers
@@ -193,7 +213,7 @@ Denfert_Rochereau
 Mouton_Duvernet
 Alesia
 Porte_d_Orleans
-# names fr/paris/ligne_5
+# names fr paris ligne_5
 Bobigny_Pablo_Picasso
 Bobigny_Pantin_Raymond_Queneau
 Eglise_de_Pantin
@@ -216,7 +236,7 @@ Gare_d_Austerlitz
 Saint_Marcel
 Campo_Formio
 Place_d_Italie
-# names fr/paris/ligne_6
+# names fr paris ligne_6
 Charles_de_Gaulle_Etoile
 Kleber
 Boissiere
@@ -245,7 +265,7 @@ Daumesnil
 Bel_Air
 Picpus
 Nation
-# names fr/paris/ligne_7
+# names fr paris ligne_7
 La_Courneuve_8_Mai_1945
 Fort_d_Aubervilliers
 Aubervilliers_Pantin_Quatre_Chemins
@@ -284,7 +304,7 @@ Le_Kremlin_Bicetre
 Villejuif_Leo_Lagrange
 Villejuif_Paul_Vaillant_Couturier
 Villejuif_Louis_Aragon
-# names fr/paris/ligne_7bis
+# names fr paris ligne_7bis
 Louis_Blanc
 Jaures
 Bolivar
@@ -292,7 +312,7 @@ Buttes_Chaumont
 Botzaris
 Place_des_Fetes
 Pre_Saint_Gervais
-# names fr/paris/ligne_8
+# names fr paris ligne_8
 Balard
 Lourmel
 Boucicaut
@@ -330,7 +350,7 @@ Maisons_Alfort_Les_Juilliottes
 Creteil_l_Echat
 Creteil_Universite
 Creteil_Prefecture
-# names fr/paris/ligne_9
+# names fr paris ligne_9
 Pont_de_Sevres
 Billancourt
 Marcel_Sembat
@@ -368,7 +388,7 @@ Porte_de_Montreuil
 Robespierre
 Croix_de_Chavaux
 Mairie_de_Montreuil
-# names fr/paris/ligne_10
+# names fr paris ligne_10
 Porte_d_Auteuil
 Michel_Ange_Auteuil
 Eglise_d_Auteuil
@@ -392,7 +412,7 @@ Maubert_Mutualite
 Cardinal_Lemoine
 Jussieu
 Gare_d_Austerlitz
-# names fr/paris/ligne_11
+# names fr paris ligne_11
 Mairie_des_Lilas
 Porte_des_Lilas
 Telegraphe
@@ -406,7 +426,7 @@ Arts_et_Metiers
 Rambuteau
 Hotel_de_Ville
 Chatelet
-# names fr/paris/ligne_12
+# names fr paris ligne_12
 Porte_de_la_Chapelle
 Marx_Dormoy
 Marcadet_Poissonniers
@@ -435,7 +455,7 @@ Convention
 Porte_de_Versailles
 Corentin_Celton
 Mairie_d_Issy
-# names fr/paris/ligne_13
+# names fr paris ligne_13
 Mairie_de_Saint_Ouen
 Garibaldi
 Porte_de_Saint_Ouen
@@ -467,7 +487,7 @@ Porte_de_Vanves
 Malakoff_Plateau_de_Vanves
 Malakoff_Rue_Etienne_Dolet
 Chatillon_Montrouge
-# names fr/paris/ligne_14
+# names fr paris ligne_14
 Saint_Lazare
 Madeleine
 Pyramides
@@ -476,7 +496,7 @@ Gare_de_Lyon
 Bercy
 Cour_Saint_Emilion
 Bibliotheque_Francois_Mitterrand
-# names fr/lyon/ligne_A
+# names fr lyon ligne_A
 Perrache
 Ampere_Victor_Hugo
 Bellecour
@@ -489,8 +509,8 @@ Republique
 Gratte_Ciel
 Flachet
 Cusset
-Laurent_Bonevay
-# names fr/lyon/ligne_B
+Laurent_Bonnevay
+# names fr lyon ligne_B
 Stade_de_Gerland
 Debourg
 Place_Jean_Jaures
@@ -500,13 +520,13 @@ Place_Guichard
 Part_Dieu
 Brotteaux
 Charpennes
-# names fr/lyon/ligne_C
+# names fr lyon ligne_C
 Hotel_de_Ville
 Croix_Paquet
 Croix_Rousse
 Henon
 Cuire
-# names fr/lyon/ligne_D
+# names fr lyon ligne_D
 Gare_de_Venissieux
 Parilly
 Mermoz_Pinel
@@ -522,7 +542,7 @@ Vieux_Lyon
 Gorge_de_Loup
 Valmy
 Gare_de_Vaise
-# names fr/marseille/ligne_1
+# names fr marseille ligne_1
 La_Timone
 Baille
 Castellane
@@ -537,7 +557,7 @@ St_Just_Hotel_de_departement
 Malpasse
 Frais_Vallon
 La_Rose
-# names fr/marseille/ligne_2
+# names fr marseille ligne_2
 Bougainville
 National
 Desiree Clary
@@ -550,7 +570,7 @@ Castellane
 Perier
 Rond_point_du_Prado
 Sainte_Marguerite_Dromel
-# names fr/rennes
+# names fr rennes
 J_F_Kennedy
 Villejean_Universite
 Pontchaillou
@@ -566,7 +586,7 @@ Italie
 Triangle
 Blosne
 La_Poterie
-# names fr/lille/ligne_1
+# names fr lille ligne_1
 Quatre_Cantons
 Cite_Scientifique
 Triolo
@@ -585,7 +605,7 @@ Wazemmes
 Porte_des_Postes
 CHR_Oscar_Lambret
 CHR_B_Calmette
-# names fr/lille/ligne_2
+# names fr lille ligne_2
 St_Philibert
 Bourg
 Maison_des_Enfants
@@ -630,7 +650,7 @@ Phalempins
 Pont_de_Neuville
 Bourgogne
 CH_Dron
-# names nl/amsterdam/metrolijn_50
+# names nl amsterdam metrolijn_50
 Isolatorweg
 Sloterdijk_NS
 De_Vlugtlaan
@@ -651,7 +671,7 @@ Bullewijk
 Holendrecht
 Reigersbos
 Gein
-# names nl/amsterdam/metrolijn_51
+# names nl amsterdam metrolijn_51
 Centraal_Station
 Nieuwmarkt
 Waterlooplein
@@ -681,7 +701,7 @@ Poortwachter
 Spinnerij
 Sacharovlaan
 Westwijk
-# names nl/amsterdam/metrolijn_52
+# names nl amsterdam metrolijn_52
 Van_Hasseltweg
 Centraal_Station
 Rokin
@@ -689,7 +709,7 @@ Vijzelgracht
 Ceintuurbaan
 Europaplein
 Zuid_WTC
-# names nl/amsterdam/metrolijn_53
+# names nl amsterdam metrolijn_53
 Centraal_Station
 Nieuwmarkt
 Waterlooplein
@@ -704,7 +724,7 @@ Verrijn_Stuartweg
 Ganzenhoef
 Kraaiennest
 Gaasperplas
-# names nl/amsterdam/metrolijn_54
+# names nl amsterdam metrolijn_54
 Centraal_Station
 Nieuwmarkt
 Waterlooplein
@@ -720,7 +740,7 @@ Bullewijk
 Holendrecht
 Reigersbos
 Gein
-# names au/vienna/u1
+# names au vienna u1
 Kagran
 Alte_Donau
 Kaisermuhlen_Vienna_International_Centre
@@ -735,14 +755,14 @@ Taubstummengasse
 Sudtiroler_Platz
 Keplerplatz
 Reumannplatz
-# names au/vienna/u2
+# names au vienna u2
 Schottenring
 Schottentor_Universitat
 Rathaus
 Volkstheater
 Museumsquartier
 Karlsplatz
-# names au/vienna/u3
+# names au vienna u3
 Ottakring
 Kendlerstrasse
 Hutteldorfer Strasse
@@ -764,7 +784,7 @@ Gasometer
 Zippererstrasse
 Enkplatz
 Simmering
-# names au/vienna/u4
+# names au vienna u4
 Hutteldorf
 Ober_St_Veit
 Unter_St_Veit
@@ -785,7 +805,7 @@ Rossauer_Lande
 Friedensbrucke
 Spittelau
 Heiligenstadt
-# names au/vienna/u6
+# names au vienna u6
 Floridsdorf
 Neue_Donau
 Handelskai
@@ -810,7 +830,7 @@ Alterlaa
 Erlaaer_Strasse
 Perfektastrasse
 Siebenhirten
-# names pt/porto/linha_A
+# names pt porto linha_A
 Senhor_de_Matosinhos
 Mercado
 Brito_Capelo
@@ -834,7 +854,7 @@ Campo_24_de_Agosto
 Heroismo
 Campanha
 Estadio_do_Dragao
-# names pt/porto/linha_B
+# names pt porto linha_B
 Pedras_Rubras
 Crestins
 Esposade
@@ -854,7 +874,7 @@ Campo_24_de_Agosto
 Heroismo
 Campanha
 Estadio_do_Dragao
-# names pt/porto/linha_C
+# names pt porto linha_C
 Trofa
 Senhora_das_Dores
 Pateiras
@@ -887,7 +907,7 @@ Campo_24_de_Agosto
 Heroismo
 Campanha
 Estadio_do_Dragao
-# names pt/porto/linha_D
+# names pt porto linha_D
 Camara_Gaia
 General_Torres
 Jardim_do_Morro
@@ -899,3 +919,325 @@ Marques
 Combatentes
 Salgueiros
 Polo_Universitario
+# names us chicago red
+Ninety_Fifth
+Eighty_Seventh
+Seventy_Ninth
+Sixty_Ninth
+Sixty_Third
+Garfield
+Forty_Seventh
+Sox_Thirty_Fifth
+Cermak_Chinatown
+Roosevelt
+Harrison
+Jackson
+Monroe
+Washington
+Grand
+Chicago
+Clark_and_Division
+North_and_Clybourn
+Fullerton
+Belmont
+Addison
+Sheridan
+Wilson
+Lawrence
+Argyle
+Berwyn
+Bryn_Mawr
+Thorndale
+Granville
+Loyola
+Morse
+Jarvis
+Howard
+# names us chicago blue
+O_Hare
+Rosemont
+Cumberland
+Harlem
+Jefferson_Park
+Montrose
+Irving_Park
+Addison
+Belmont
+Logan_Square
+California
+Western
+Damen
+Division
+Chicago
+Grand
+Clark_and_Lake
+Washington
+Monroe
+Jackson
+LaSalle
+Clinton
+UIC_Halsted
+Racine
+Medical_Center
+Western
+Kedzie_Homan
+Pulaski
+Cicero
+Austin
+Oak_Park
+Harlem
+Forest_Park
+Polk
+Eighteenth
+Damen
+Western
+California
+Kedzie
+Central_Park
+Pulaski
+Kildare
+Cicero
+Fifty_Fourth_and_Cermak
+# names us chicago purple
+Linden
+Central
+Noyes
+Foster
+Davis
+Dempster
+Main
+South_Boulevard
+Howard
+Belmont
+Wellington
+Diversey
+Fullerton
+Armitage
+Sedgwick
+Chicago
+Merchandise_Mart
+Clark_and_Lake
+State_and_Lake
+Randolph
+Madison
+Adams
+Library
+LaSalle_and_Van_Buren
+Quincy
+Washington_and_Wells
+# names us chicago yellow
+Dempster
+Howard
+# names us chicago brown
+Kimball
+Kedzie
+Francisco
+Rockwell
+Western
+Damen
+Montrose
+Irving_Park
+Addison
+Paulina
+Southport
+Belmont
+Wellington
+Diversey
+Fullerton
+Armitage
+Sedgwick
+Chicago
+Merchandise_Mart
+Washington_and_Wells
+Quincy
+LaSalle_and_Van_Buren
+Library
+Adams
+Madison
+Randolph
+State_and_Lake
+Clark_and_Lake
+# names us chicago orange
+Midway
+Pulaski
+Kedzie
+Western
+Thirty_Fifth_and_Archer
+Ashland
+Halsted
+Roosevelt
+Library
+LaSalle_and_Van_Buren
+Quincy
+Washington_and_Wells
+Clark_and_Lake
+State_and_Lake
+Randolph
+Madison
+Adams
+# names us chicago green
+Harlem_and_Lake
+Oak_Park
+Ridgeland
+Austin
+Central
+Laramie
+Cicero
+Pulaski
+Conservatory_Central_Park_Drive
+Kedzie
+California
+Ashland
+Clinton
+Clark_and_Lake
+State_and_Lake
+Randolph
+Madison
+Adams
+Roosevelt
+Thirty_Fifth_Bronzeville_IIT
+Indiana
+Forty_Third
+Forty_Seventh
+Fifty_First
+Garfield
+King_Drive
+East_Sixty_Third_and_Cottage_Grove
+Halsted
+Ashland_and_Sixty_Third
+# names us chicago pink
+Fifty_Fourth_and_Cermak
+Cicero
+Kildare
+Pulaski
+Central_Park
+Kedzie
+California
+Western
+Damen
+Eighteenth
+Polk
+Ashland
+Clinton
+Clark_and_Lake
+State_and_Lake
+Randolph
+Madison
+Adams
+Library
+LaSalle_and_Van_Buren
+Quincy
+Washington_and_Wells
+# names uk london bakerloo_line
+Harrow_and_Wealdstone Kenton South_Kenton North_Wembley Wembley_Central
+Stonebridge_Park Harlesden Willesden_Junction Kensal_Green Queen_s_Park
+Kilburn_Park Maida_Vale Warwick_Avenue Paddington Edgware_Road Marylebone
+Baker_Street Regent_s_Park Oxford_Circus Piccadilly_Circus Charing_Cross
+Embankment Waterloo Lambert_North Elephant_and_Castle
+# names uk london central_line
+West_Ruislip Ruislip_Gardens South_Ruislip Northolt Greenford Perivale
+Hanger_Lane Ealing_Broadway West_Acton North_Acton East_Acton White_City
+Wood_Lane Shepard_s_Bush Holland_Park Notting_Hill_Gate Queensway
+Lancaster_Gate Marble_Arch Bond_Street Oxford_Circus Tottenham_Court_Road
+Holborn Chancery_Lane St_Paul_s Bank Liverpool_Street Bethnal_Green
+Mile_End Stratford Leyton Leytonstone Wanstead Redbridge Gants_Hill
+Newbury_Park Barkingside Fairlop Hainault Grange_Hill Chigwell Roding_Valley
+Snaresbrook South_Woodford Woodford Buckhurst_Hill Loughton Debden
+Theydon_Bois Epping
+# names uk london circle_line
+Paddington Edgware_Road Baker_Street Great_Portland_Street Euston_Square
+King_s_Cross_St_Pancras Farringdon Barbican Moorgate Liverpool_Street
+Aldgate Tower_Hill Monument Cannon_Street Mansion_House Blackfriars
+Temple Embankment Westminster St_James_s_Park Victoria Sloane_Square
+South_Kensington Gloucester_Road High_Street_Kensington Notting_Hill_Gate
+Bayswater
+# names uk london district_line
+Richmond Kew_Gardens Gunnersbury Ealing_Broadway Ealing_Common Acton_Town
+Chiswick_Park Turnham_Green Stamford_Brook Ravenscourt_Park Hammersmith
+Barons_Court West_Kensington Wimbledon Wimbledon_Park Southfields
+East_Putney Putney_Bridge Parsons_Green Fulham_Broadway West_Brompton
+Kensington_Olympia Earl_s_Court Gloucester_Road South_Kensington
+Sloane_Square Victoria St_James_s_Park Westminster Embankment Temple
+Blackfriars Mansion_House Cannon_Street Monument Tower_Hill Aldgate_East
+Whitechapel Stepney_Green Mile_End Bow_Road Bromley_by_Bow West_Ham
+Plaistow Upton Park East Ham Barking Upney Becontree Dagenham_Heathway
+Dagenham_East Elm_Park Hornchurch Upminster_Bridge Upminster
+High_Street_Kensington Notting_Hill_Gate Bayswater Paddington Edgware_Road
+# names uk london east_london_line
+Shoreditch Whitechapel Shadwell Wapping Rotherhithe Canada_Water
+Surrey_Quays New_Cross_Gate New_Cross
+# names uk london hammersmith_and_city_line
+Hammersmith Goldhawk_Road Shepherd_s_Bush Latimer_Road Ladbroke_Grove
+Westbourne_Park Royal_Oak Paddington Edgware_Road Baker_Street
+Great_Portland_Street Euston_Square King_s_Cross_St_Pancras Farringdon
+Barbican Moorgate Liverpool_Street Aldgate_East Whitechapel Stepney_Green
+Mile_End Bow_Road Bromley_by_Bow West_Ham Plaistow Upton_Park East_Ham Barking
+# names uk london jubilee_line
+Stanmore Canons_Park Queensbury Kingsbury Wembley_Park Neasden Dollis_Hill
+Willesden_Green Kilburn West_Hampstead Finchley_Road Swiss_Cottage
+St_John_s_Wood Baker_Street Bond_Street Green_Park Westminster Waterloo
+Southwark London_Bridge Bermondsey Canada_Water Canary_Wharf North_Greenwich
+Canning_Town West_Ham Stratford
+# names uk london metropolitan_line
+Aldgate Liverpool_Street Moorgate Barbican Farringdon King_s_Cross_St_Pancras
+Euston_Square Great_Portland_Street Baker_Street Finchley_Road Wembley_Park
+Preston_Road Northwick_Park Harrow_on_the_Hill West_Harrow Rayners_Lane
+Eastcote Ruislip_Manor Ruislip Ickenham Hillingdon Uxbridge North_Harrow
+Pinner Northwood_Hills Northwood Moor_Park Croxley Watford Rickmansworth
+Chorleywood Chalfont_Latimer Chesham Amersham
+# names uk london northern_line
+High_Barnet Totteridge_and_Whetstone Woodside_Park West_Finchley
+Mill_Hill_East Finchley_Central East_Finchley Highgate Archway
+Tufnell_Park Kentish_Town Edgware Burnt_Oak Colindale Hendon_Central
+Brent_Cross Golders_Green Hampstead Belsize_Park Chalk_Farm Camden_Town
+Mornington_Crescent Euston Warren_Street Goodge_Street Tottenham_Court_Road
+Leicester_Square Charing_Cross Embankment Waterloo Euston
+King_s_Cross_St_Pancras Angel Old_Street Moorgate Bank London_Bridge Borough
+Elephant_and_Castle Kennington Oval Stockwell Clapham_North Clapham_Common
+Clapham_South Balham Tooting_Bec Tooting_Broadway Colliers_Wood
+South_Wimbledon Morden
+# names uk london piccadilly_line
+Cockfosters Oakwood Southgate Arnos_Grove Bounds_Green Wood_Green
+Turnpike_Lane Manor_House Finsbury_Park Arsenal Holloway_Road Caledonian_Road
+King_s_Cross Russell_Square Holborn Covent_Garden Leicester_Square
+Piccadilly_Circus Green_Park Hyde_Park_Corner Knightsbridge South_Kensington
+Gloucester_Road Earl_s_Court Barons_Court Hammersmith Turnham_Green
+Acton_Town South_Ealing Northfields Boston_Manor Osterley Hounslow_East
+Hounslow_Central Hounslow_West Hatton_Cross Heathrow_Terminal_4
+Heathrow_Terminals_1_2_3
+# names uk london victoria_line
+Walthamstow_Central Blackhorse_Road Tottenham_Hale Seven_Sisters
+Finsbury_Park Highbury_Islington King_s_Cross_St_Pancras Euston
+Warren_Street Oxford_Circus Green_Park Victoria Pimlico Vauxhall
+Stockwell Brixton
+# names uk london waterloo_and_city_line
+Bank Waterloo
+# names nl rotterdam erasmus_line
+De_Akkers Heemraadlaan Spijkenisse_Centrum Zalmplaat Hoogvliet Tussenwater
+Poortugaal Rhoon Slinge Zuidplein Maashaven Rijnhaven Wilhelminaplein
+Leuvehaven Beurs Stadhuis Centraal_Station
+# names nl rotterdam caland_line
+De_Akkers Heemraadlaan Spijkenisse_Centrum Zalmplaat Hoogvliet Tussenwater
+Pernis Vijfsluizen Troelstralaan Parkweg Schiedam_Centrum Marconiplein
+Delfshaven Coolhaven Dijkzigt Eendrachtsplein Beurs Blaak Oostplein
+Gerdesiaweg Voorschotenlaan Kralingen_Zoom Capelsebrug Slotlaan
+Capelle_Centrum De_Terp Schenkel Prinsenlaan Oosterflank Alexander
+Graskruid Romeynshof Binnenhof Hesseplaats Nieuw_Verlaat Ambachtsland
+De_Tochten Nesselande
+# names ca toronto yonge_university_spadina
+Finch North_York_Centre Sheppard_Yonge York_Mills Lawrence Eglinton
+Davisville St_Clair Summerhill Rosedale Bloor_Yonge Wellesley College
+Dundas Queen King Union St_Andrew Osgoode St_Patrick Queen_s_Park
+Museum St_George Spadina Dupont St_Clair_West Eglinton_West Glencairn
+Lawrence_West Yorkdale Wilson Downsview
+# names ca toronto bloor_danforth
+Kipling Islington Royal_York Old_Mill Jane Runnymede High_Park Keele
+Dundas_West Lansdowne Dufferin Ossington Christie Bathurst Spadina
+St_George Bay Bloor_Yonge Sherbourne Castle_Frank Broadview Chester
+Pape Donlands Greenwood Coxwell Woodbine Main_Street Victoria_Park
+Warden Kennedy
+# names ca toronto scarborough_rt
+Kennedy Lawrence_East Ellesmere Midland Scarborough_Centre McCowan
+# names ca toronto sheppard
+Sheppard_Yonge Willowdale Bayview Bessarion Leslie Don_Mills
+
