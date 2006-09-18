@@ -1,8 +1,215 @@
---- #YAML:1.0
+---
 name: Acme-MetaSyntactic
-version: 0.91
+version: 0.92
 author:
-  - Philippe "BooK" Bruhat <book@cpan.org>
+  - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
 license: perl
-generated_by: Module::Build version 0.2612, without YAML.pm
+requires:
+  File::Glob: 0
+  List::Util: 0
+  Test::More: 0
+recommends:
+  LWP::UserAgent: 2
+provides:
+  Acme::MetaSyntactic:
+    file: lib/Acme/MetaSyntactic.pm
+    version: 0.92
+  'Acme::MetaSyntactic::':
+    file: lib/Acme/MetaSyntactic.pm
+    version: 0.92
+  Acme::MetaSyntactic::Alias:
+    file: lib/Acme/MetaSyntactic/Alias.pm
+  Acme::MetaSyntactic::List:
+    file: lib/Acme/MetaSyntactic/List.pm
+  Acme::MetaSyntactic::Locale:
+    file: lib/Acme/MetaSyntactic/Locale.pm
+  Acme::MetaSyntactic::MultiList:
+    file: lib/Acme/MetaSyntactic/MultiList.pm
+  Acme::MetaSyntactic::RemoteList:
+    file: lib/Acme/MetaSyntactic/RemoteList.pm
+  Acme::MetaSyntactic::alphabet:
+    file: lib/Acme/MetaSyntactic/alphabet.pm
+  Acme::MetaSyntactic::amber:
+    file: lib/Acme/MetaSyntactic/amber.pm
+  Acme::MetaSyntactic::antlers:
+    file: lib/Acme/MetaSyntactic/antlers.pm
+  Acme::MetaSyntactic::any:
+    file: lib/Acme/MetaSyntactic/any.pm
+  Acme::MetaSyntactic::barbapapa:
+    file: lib/Acme/MetaSyntactic/barbapapa.pm
+  Acme::MetaSyntactic::barbarella:
+    file: lib/Acme/MetaSyntactic/barbarella.pm
+  Acme::MetaSyntactic::batman:
+    file: lib/Acme/MetaSyntactic/batman.pm
+  Acme::MetaSyntactic::booze:
+    file: lib/Acme/MetaSyntactic/booze.pm
+  Acme::MetaSyntactic::browser:
+    file: lib/Acme/MetaSyntactic/browser.pm
+  Acme::MetaSyntactic::buffy:
+    file: lib/Acme/MetaSyntactic/buffy.pm
+  Acme::MetaSyntactic::chess:
+    file: lib/Acme/MetaSyntactic/chess.pm
+  Acme::MetaSyntactic::colors:
+    file: lib/Acme/MetaSyntactic/colors.pm
+  Acme::MetaSyntactic::colours:
+    file: lib/Acme/MetaSyntactic/colours.pm
+  Acme::MetaSyntactic::constellations:
+    file: lib/Acme/MetaSyntactic/constellations.pm
+  Acme::MetaSyntactic::contrade:
+    file: lib/Acme/MetaSyntactic/contrade.pm
+  Acme::MetaSyntactic::counting_rhyme:
+    file: lib/Acme/MetaSyntactic/counting_rhyme.pm
+  Acme::MetaSyntactic::crypto:
+    file: lib/Acme/MetaSyntactic/crypto.pm
+  Acme::MetaSyntactic::currency:
+    file: lib/Acme/MetaSyntactic/currency.pm
+  Acme::MetaSyntactic::dancers:
+    file: lib/Acme/MetaSyntactic/dancers.pm
+  Acme::MetaSyntactic::debian:
+    file: lib/Acme/MetaSyntactic/debian.pm
+  Acme::MetaSyntactic::dilbert:
+    file: lib/Acme/MetaSyntactic/dilbert.pm
+  Acme::MetaSyntactic::discworld:
+    file: lib/Acme/MetaSyntactic/discworld.pm
+  Acme::MetaSyntactic::donmartin:
+    file: lib/Acme/MetaSyntactic/donmartin.pm
+  Acme::MetaSyntactic::dwarves:
+    file: lib/Acme/MetaSyntactic/dwarves.pm
+  Acme::MetaSyntactic::elements:
+    file: lib/Acme/MetaSyntactic/elements.pm
+  Acme::MetaSyntactic::facecards:
+    file: lib/Acme/MetaSyntactic/facecards.pm
+  Acme::MetaSyntactic::flintstones:
+    file: lib/Acme/MetaSyntactic/flintstones.pm
+  Acme::MetaSyntactic::foo:
+    file: lib/Acme/MetaSyntactic/foo.pm
+  Acme::MetaSyntactic::garbage:
+    file: lib/Acme/MetaSyntactic/garbage.pm
+  Acme::MetaSyntactic::garfield:
+    file: lib/Acme/MetaSyntactic/garfield.pm
+  Acme::MetaSyntactic::gems:
+    file: lib/Acme/MetaSyntactic/gems.pm
+  Acme::MetaSyntactic::groo:
+    file: lib/Acme/MetaSyntactic/groo.pm
+  Acme::MetaSyntactic::haddock:
+    file: lib/Acme/MetaSyntactic/haddock.pm
+  Acme::MetaSyntactic::hhgg:
+    file: lib/Acme/MetaSyntactic/hhgg.pm
+  Acme::MetaSyntactic::invasions:
+    file: lib/Acme/MetaSyntactic/invasions.pm
+  Acme::MetaSyntactic::jamesbond:
+    file: lib/Acme/MetaSyntactic/jamesbond.pm
+  Acme::MetaSyntactic::jerkcity:
+    file: lib/Acme/MetaSyntactic/jerkcity.pm
+  Acme::MetaSyntactic::loremipsum:
+    file: lib/Acme/MetaSyntactic/loremipsum.pm
+  Acme::MetaSyntactic::lotr:
+    file: lib/Acme/MetaSyntactic/lotr.pm
+  Acme::MetaSyntactic::magic8ball:
+    file: lib/Acme/MetaSyntactic/magic8ball.pm
+  Acme::MetaSyntactic::magicroundabout:
+    file: lib/Acme/MetaSyntactic/magicroundabout.pm
+  Acme::MetaSyntactic::metro:
+    file: lib/Acme/MetaSyntactic/metro.pm
+  Acme::MetaSyntactic::monty_spam:
+    file: lib/Acme/MetaSyntactic/monty_spam.pm
+  Acme::MetaSyntactic::norse_mythology:
+    file: lib/Acme/MetaSyntactic/norse_mythology.pm
+  Acme::MetaSyntactic::octothorpe:
+    file: lib/Acme/MetaSyntactic/octothorpe.pm
+  Acme::MetaSyntactic::olympics:
+    file: lib/Acme/MetaSyntactic/olympics.pm
+  Acme::MetaSyntactic::opcodes:
+    file: lib/Acme/MetaSyntactic/opcodes.pm
+  Acme::MetaSyntactic::oulipo:
+    file: lib/Acme/MetaSyntactic/oulipo.pm
+  Acme::MetaSyntactic::pantagruel:
+    file: lib/Acme/MetaSyntactic/pantagruel.pm
+  Acme::MetaSyntactic::pasta:
+    file: lib/Acme/MetaSyntactic/pasta.pm
+  Acme::MetaSyntactic::pause_id:
+    file: lib/Acme/MetaSyntactic/pause_id.pm
+  Acme::MetaSyntactic::peanuts:
+    file: lib/Acme/MetaSyntactic/peanuts.pm
+  Acme::MetaSyntactic::pgpfone:
+    file: lib/Acme/MetaSyntactic/pgpfone.pm
+  Acme::MetaSyntactic::phonetic:
+    file: lib/Acme/MetaSyntactic/phonetic.pm
+  Acme::MetaSyntactic::pie:
+    file: lib/Acme/MetaSyntactic/pie.pm
+  Acme::MetaSyntactic::planets:
+    file: lib/Acme/MetaSyntactic/planets.pm
+  Acme::MetaSyntactic::pm_groups:
+    file: lib/Acme/MetaSyntactic/pm_groups.pm
+  Acme::MetaSyntactic::pokemon:
+    file: lib/Acme/MetaSyntactic/pokemon.pm
+  Acme::MetaSyntactic::pooh:
+    file: lib/Acme/MetaSyntactic/pooh.pm
+  Acme::MetaSyntactic::pop2:
+    file: lib/Acme/MetaSyntactic/pop2.pm
+  Acme::MetaSyntactic::pop3:
+    file: lib/Acme/MetaSyntactic/pop3.pm
+  Acme::MetaSyntactic::pornstars:
+    file: lib/Acme/MetaSyntactic/pornstars.pm
+  Acme::MetaSyntactic::pumpkings:
+    file: lib/Acme/MetaSyntactic/pumpkings.pm
+  Acme::MetaSyntactic::punctuation:
+    file: lib/Acme/MetaSyntactic/punctuation.pm
+  Acme::MetaSyntactic::pynchon:
+    file: lib/Acme/MetaSyntactic/pynchon.pm
+  Acme::MetaSyntactic::python:
+    file: lib/Acme/MetaSyntactic/python.pm
+  Acme::MetaSyntactic::quantum:
+    file: lib/Acme/MetaSyntactic/quantum.pm
+  Acme::MetaSyntactic::robin:
+    file: lib/Acme/MetaSyntactic/robin.pm
+  Acme::MetaSyntactic::roman:
+    file: lib/Acme/MetaSyntactic/roman.pm
+  Acme::MetaSyntactic::scooby_doo:
+    file: lib/Acme/MetaSyntactic/scooby_doo.pm
+  Acme::MetaSyntactic::services:
+    file: lib/Acme/MetaSyntactic/services.pm
+  Acme::MetaSyntactic::shadok:
+    file: lib/Acme/MetaSyntactic/shadok.pm
+  Acme::MetaSyntactic::simpsons:
+    file: lib/Acme/MetaSyntactic/simpsons.pm
+  Acme::MetaSyntactic::sins:
+    file: lib/Acme/MetaSyntactic/sins.pm
+  Acme::MetaSyntactic::smtp:
+    file: lib/Acme/MetaSyntactic/smtp.pm
+  Acme::MetaSyntactic::space_missions:
+    file: lib/Acme/MetaSyntactic/space_missions.pm
+  Acme::MetaSyntactic::sql:
+    file: lib/Acme/MetaSyntactic/sql.pm
+  Acme::MetaSyntactic::stars:
+    file: lib/Acme/MetaSyntactic/stars.pm
+  Acme::MetaSyntactic::state_flowers:
+    file: lib/Acme/MetaSyntactic/state_flowers.pm
+  Acme::MetaSyntactic::swords:
+    file: lib/Acme/MetaSyntactic/swords.pm
+  Acme::MetaSyntactic::teletubbies:
+    file: lib/Acme/MetaSyntactic/teletubbies.pm
+  Acme::MetaSyntactic::tld:
+    file: lib/Acme/MetaSyntactic/tld.pm
+  Acme::MetaSyntactic::tmnt:
+    file: lib/Acme/MetaSyntactic/tmnt.pm
+  Acme::MetaSyntactic::tour_de_france:
+    file: lib/Acme/MetaSyntactic/tour_de_france.pm
+  Acme::MetaSyntactic::trigan:
+    file: lib/Acme/MetaSyntactic/trigan.pm
+  Acme::MetaSyntactic::unicode:
+    file: lib/Acme/MetaSyntactic/unicode.pm
+  Acme::MetaSyntactic::us_presidents:
+    file: lib/Acme/MetaSyntactic/us_presidents.pm
+  Acme::MetaSyntactic::userfriendly:
+    file: lib/Acme/MetaSyntactic/userfriendly.pm
+  Acme::MetaSyntactic::vcs:
+    file: lib/Acme/MetaSyntactic/vcs.pm
+  Acme::MetaSyntactic::viclones:
+    file: lib/Acme/MetaSyntactic/viclones.pm
+  Acme::MetaSyntactic::weekdays:
+    file: lib/Acme/MetaSyntactic/weekdays.pm
+  Acme::MetaSyntactic::yapc:
+    file: lib/Acme/MetaSyntactic/yapc.pm
+generated_by: Module::Build version 0.26
