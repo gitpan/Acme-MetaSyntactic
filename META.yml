@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.92
+version: 0.93
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.92
+    version: 0.93
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.92
+    version: 0.93
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -98,6 +98,8 @@ provides:
     file: lib/Acme/MetaSyntactic/hhgg.pm
   Acme::MetaSyntactic::invasions:
     file: lib/Acme/MetaSyntactic/invasions.pm
+  Acme::MetaSyntactic::jabberwocky:
+    file: lib/Acme/MetaSyntactic/jabberwocky.pm
   Acme::MetaSyntactic::jamesbond:
     file: lib/Acme/MetaSyntactic/jamesbond.pm
   Acme::MetaSyntactic::jerkcity:
