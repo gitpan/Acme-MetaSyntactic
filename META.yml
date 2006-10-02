@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.93
+version: 0.94
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.93
+    version: 0.94
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.93
+    version: 0.94
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -116,6 +116,8 @@ provides:
     file: lib/Acme/MetaSyntactic/metro.pm
   Acme::MetaSyntactic::monty_spam:
     file: lib/Acme/MetaSyntactic/monty_spam.pm
+  Acme::MetaSyntactic::nis:
+    file: lib/Acme/MetaSyntactic/nis.pm
   Acme::MetaSyntactic::norse_mythology:
     file: lib/Acme/MetaSyntactic/norse_mythology.pm
   Acme::MetaSyntactic::octothorpe:
