@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.95
+version: 0.96
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.95
+    version: 0.96
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.95
+    version: 0.96
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -196,6 +196,8 @@ provides:
     file: lib/Acme/MetaSyntactic/swords.pm
   Acme::MetaSyntactic::teletubbies:
     file: lib/Acme/MetaSyntactic/teletubbies.pm
+  Acme::MetaSyntactic::thunderbirds:
+    file: lib/Acme/MetaSyntactic/thunderbirds.pm
   Acme::MetaSyntactic::tld:
     file: lib/Acme/MetaSyntactic/tld.pm
   Acme::MetaSyntactic::tmnt:
