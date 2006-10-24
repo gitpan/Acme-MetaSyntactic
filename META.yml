@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.96
+version: 0.97
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.96
+    version: 0.97
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.96
+    version: 0.97
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -90,6 +90,8 @@ provides:
     file: lib/Acme/MetaSyntactic/garfield.pm
   Acme::MetaSyntactic::gems:
     file: lib/Acme/MetaSyntactic/gems.pm
+  Acme::MetaSyntactic::good_omens:
+    file: lib/Acme/MetaSyntactic/good_omens.pm
   Acme::MetaSyntactic::groo:
     file: lib/Acme/MetaSyntactic/groo.pm
   Acme::MetaSyntactic::haddock:
