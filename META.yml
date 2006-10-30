@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.97
+version: 0.98
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.97
+    version: 0.98
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.97
+    version: 0.98
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -116,6 +116,8 @@ provides:
     file: lib/Acme/MetaSyntactic/magic8ball.pm
   Acme::MetaSyntactic::magicroundabout:
     file: lib/Acme/MetaSyntactic/magicroundabout.pm
+  Acme::MetaSyntactic::magma:
+    file: lib/Acme/MetaSyntactic/magma.pm
   Acme::MetaSyntactic::metro:
     file: lib/Acme/MetaSyntactic/metro.pm
   Acme::MetaSyntactic::monty_spam:
