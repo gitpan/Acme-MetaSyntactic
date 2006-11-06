@@ -1,6 +1,6 @@
 ---
 name: Acme-MetaSyntactic
-version: 0.98
+version: 0.99
 author:
   - 'Philippe "BooK" Bruhat <book@cpan.org>'
 abstract: Themed metasyntactic variables names
@@ -14,10 +14,10 @@ recommends:
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.98
+    version: 0.99
   'Acme::MetaSyntactic::':
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.98
+    version: 0.99
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -196,6 +196,8 @@ provides:
     file: lib/Acme/MetaSyntactic/stars.pm
   Acme::MetaSyntactic::state_flowers:
     file: lib/Acme/MetaSyntactic/state_flowers.pm
+  Acme::MetaSyntactic::summerwine:
+    file: lib/Acme/MetaSyntactic/summerwine.pm
   Acme::MetaSyntactic::swords:
     file: lib/Acme/MetaSyntactic/swords.pm
   Acme::MetaSyntactic::teletubbies:
