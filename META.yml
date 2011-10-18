@@ -1,23 +1,19 @@
 ---
-name: Acme-MetaSyntactic
-version: 0.99
+abstract: 'Themed metasyntactic variables names'
 author:
-  - 'Philippe "BooK" Bruhat <book@cpan.org>'
-abstract: Themed metasyntactic variables names
+  - "Philippe \"BooK\" Bruhat <book@cpan.org>"
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
 license: perl
-requires:
-  File::Glob: 0
-  List::Util: 0
-  Test::More: 0
-recommends:
-  LWP::UserAgent: 2
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Acme-MetaSyntactic
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 0.99
-  'Acme::MetaSyntactic::':
-    file: lib/Acme/MetaSyntactic.pm
-    version: 0.99
+    version: 0.99_01
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
   Acme::MetaSyntactic::List:
@@ -226,4 +222,12 @@ provides:
     file: lib/Acme/MetaSyntactic/weekdays.pm
   Acme::MetaSyntactic::yapc:
     file: lib/Acme/MetaSyntactic/yapc.pm
-generated_by: Module::Build version 0.26
+recommends:
+  LWP::UserAgent: 2
+requires:
+  File::Glob: 0
+  List::Util: 0
+  Test::More: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.99_01
