@@ -17,6 +17,7 @@ sub all_themes_ok {
     my %source = Acme::MetaSyntactic->_find_themes( @lib );
 
     my $tb = __PACKAGE__->builder;
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $tb->plan( tests => scalar keys %source );
     theme_ok( $_, $source{$_} ) for sort keys %source;
 }
@@ -24,20 +25,23 @@ sub all_themes_ok {
 sub theme_ok {
     my @args = @_;
     my $tb   = __PACKAGE__->builder;
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
 
     # all subtests
     my $theme = $args[0];
     $tb->subtest(
         $theme,
         sub {
-            $tb->subtest( "load $theme",     sub { subtest_load(@args); } );
-            $tb->subtest( "format $theme",   sub { subtest_format(@args); } );
-            $tb->subtest( "uniq $theme",     sub { subtest_uniq(@args); } );
-            $tb->subtest( "length $theme",   sub { subtest_length(@args); } );
-            $tb->subtest( "data $theme",     sub { subtest_data(@args); } );
-            $tb->subtest( "import $theme",   sub { subtest_import(@args); } );
-            $tb->subtest( "noimport $theme", sub { subtest_noimport(@args); } );
-            $tb->subtest( "theme $theme",    sub { subtest_theme(@args); } );
+            $tb->subtest( "$theme fixme",    sub { subtest_fixme(@args); } );
+            $tb->subtest( "$theme load",     sub { subtest_load(@args); } )
+                or return;
+            $tb->subtest( "$theme data",     sub { subtest_data(@args); } );
+            $tb->subtest( "$theme format",   sub { subtest_format(@args); } );
+            $tb->subtest( "$theme uniq",     sub { subtest_uniq(@args); } );
+            $tb->subtest( "$theme length",   sub { subtest_length(@args); } );
+            $tb->subtest( "$theme import",   sub { subtest_import(@args); } );
+            $tb->subtest( "$theme noimport", sub { subtest_noimport(@args); } );
+            $tb->subtest( "$theme theme",    sub { subtest_theme(@args); } );
             $tb->done_testing;
         }
     );
@@ -53,23 +57,39 @@ sub _starting_points {
     return 'lib';
 }
 
+# load the theme in a random namespace
+{
+    my $num = 0;
+
+    sub _load {
+        my ( $theme, $do_import ) = @_;
+        my $module = "Acme::MetaSyntactic::$theme";
+        my $pkg    = sprintf "Acme::MetaSyntactic::SCRATCH_%04d", $num++;
+        my $code   = $do_import
+            ? "package $pkg; use $module; 1;"
+            : "package $pkg; use $module (); 1;";
+        my $ok     = eval $code;
+        return ( $pkg, !$ok && $@ );
+    }
+}
+
 # return a list of [ AMS object, details ]
 sub _theme_sublists {
     my ($theme) = @_;
-    eval "require Acme::MetaSyntactic::$theme;"
-        or __PACKAGE__->builder->diag("Failed loading $theme $@");
-
     my @metas;
+
+    # assume the module has already been loaded
     no strict 'refs';
-    my %isa = map { $_ => 1 } @{"Acme::MetaSyntactic::$theme\::ISA"};
-    if( exists $isa{'Acme::MetaSyntactic::Locale'} ) {
+    my $class = "Acme::MetaSyntactic::$theme";
+
+    if( $class->isa('Acme::MetaSyntactic::Locale') ) {
         for my $lang ( "Acme::MetaSyntactic::$theme"->languages() ) {
             push @metas,
                 [ "Acme::MetaSyntactic::$theme"->new( lang => $lang ),
                   "$theme, $lang locale" ];
         }
     }
-    elsif( exists $isa{'Acme::MetaSyntactic::MultiList'} ) {
+    elsif( $class->isa('Acme::MetaSyntactic::MultiList') ) {
         for my $cat ( "Acme::MetaSyntactic::$theme"->categories(), ':all' ) {
             push @metas,
                 [ "Acme::MetaSyntactic::$theme"->new( category => $cat ),
@@ -86,9 +106,8 @@ sub _theme_sublists {
 # return the list of all theme items
 sub _theme_items {
     my ($theme) = @_;
-    eval "package Test::MetaSyntactic::SCRATCH; use Acme::MetaSyntactic::$theme; 1;"
-        or __PACKAGE__->builder->diag("$theme $@");
 
+    # assume the module has already been loaded
     no strict 'refs';
     my $class = "Acme::MetaSyntactic::$theme";
     my @items
@@ -98,6 +117,32 @@ sub _theme_items {
         ? map @$_, values %{"$class\::MultiList"}
         : ();
     return @items;
+}
+
+sub _check_file_lines {
+    my ($theme, $file, $mesg, $cb ) = @_;
+    my $tb = __PACKAGE__->builder;
+    $tb->plan( tests => 1 );
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
+
+SKIP: {
+        my ($fh, $skip);
+        if ( $file ) {
+            open $fh, $file or do { $skip="Can't open $file: $!"; };
+        }
+        else {
+            $skip = "This test needs the source file for $theme";
+        }
+        if( $skip ) {
+            $tb->skip($skip);
+            last SKIP;
+        }
+
+        my @lines = $cb->( <$fh> );
+        $tb->is_num( scalar @lines, 0, $mesg );
+        $tb->diag( "Failed lines:\n", map "  $_\n", @lines ) if @lines;
+        close $fh;
+    }
 }
 
 #
@@ -111,8 +156,20 @@ sub subtest_load {
     my $tb = __PACKAGE__->builder;
 
     $tb->plan( tests => 1 );
-    `$^X -Mblib -MAcme::MetaSyntactic::$theme -e1`;
-    $tb->is_num( $?, 0, $theme );
+    my ( $pkg, $error ) = _load( $theme, 1 );
+    $tb->ok( !$error, "use Acme::MetaSyntactic::$theme;" );
+    $tb->diag($error) if $error;
+}
+
+# t/02fixme.t
+sub subtest_fixme {
+    my ( $theme, $file ) = @_;
+    $file = '' if !defined $file;
+    _check_file_lines(
+        $theme, $file,
+        "No FIXME found in $file",
+        sub { grep /\bFIXME\b/, @_ }
+    );
 }
 
 # t/08theme.t
@@ -121,12 +178,8 @@ sub subtest_theme {
     my $tb = __PACKAGE__->builder;
     $tb->plan( tests => 2 );
 
-    eval "require Acme::MetaSyntactic::$theme;"
-        or __PACKAGE__->builder->diag("Failed loading $theme $@");
-
     $tb->is_eq( eval { "Acme::MetaSyntactic::$theme"->theme },
         $theme, "theme() for Acme::MetaSyntactic::$theme" );
-
     $tb->is_eq( eval { "Acme::MetaSyntactic::$theme"->new->theme },
         $theme, "theme() for Acme::MetaSyntactic::$theme" );
 }
@@ -135,24 +188,25 @@ sub subtest_theme {
 sub subtest_import {
     my ($theme) = @_;
     my $tb = __PACKAGE__->builder;
-    $tb->plan( tests => 2 );
+    $tb->plan( tests => my $tests = 2 );
 
-    if( $theme =~ /^(?:any|random)$/) {
-        $tb->skip( "Not testing import for theme $theme" );
-        $tb->skip( "Not testing import for theme $theme" );
-    }
-    else {
-        my %seen = map { $_ => 1 } _theme_items( $theme );
+SKIP: {
+        if ( $theme =~ /^(?:any|random)$/ ) {
+            $tb->skip("Not testing import for theme $theme") for 1 .. $tests;
+            last SKIP;
+        }
+        else {
+            my ($pkg) = _load( $theme, 1 );
+            my %seen = map { $_ => 1 } _theme_items($theme);
 
-        no strict 'refs';
-        $tb->ok( exists ${"Test::MetaSyntactic::SCRATCH\::"}{"meta$theme"},
-            "meta$theme exported"
-        );
+            no strict 'refs';
+            $tb->ok( exists ${"$pkg\::"}{"meta$theme"},
+                "meta$theme exported" );
 
-        package Test::MetaSyntactic::SCRATCH;
-        no strict 'refs';
-        my @names = "meta$theme"->();
-        $tb->ok( exists $seen{ $names[0] }, "meta$theme -> $names[0]" );
+            my @names
+                = eval qq{package $pkg; no strict 'refs'; "meta$theme"->();};
+            $tb->ok( exists $seen{ $names[0] }, "meta$theme -> $names[0]" );
+        }
     }
 }
 
@@ -162,12 +216,12 @@ sub subtest_noimport {
     my $tb = __PACKAGE__->builder;
     $tb->plan( tests => 1 );
 
-    eval "package Test::MetaSyntactic::EMPTY; use Acme::MetaSyntactic::$theme (); 1;"
-        or __PACKAGE__->builder->diag("$theme $@");
+    my ($pkg) = _load($theme);
 
     # meta$theme should not exist
-    eval "package Test::MetaSyntatic::EMPTY; meta$theme(1);";
-    $tb->ok( $@ =~ /^Undefined subroutine &Test::MetaSyntatic::EMPTY::meta$theme called/, "meta$theme function not exported" );
+    eval "package $pkg; meta$theme(1);";
+    $tb->ok( $@ =~ /^Undefined subroutine &$pkg\::meta$theme called/,
+        "meta$theme function not exported" );
 }
 
 # t/21format.t
@@ -175,17 +229,17 @@ sub subtest_format {
     my ($theme) = @_;
     my $tb = __PACKAGE__->builder;
 
-    my @metas = _theme_sublists( $theme );
+    my @metas = _theme_sublists($theme);
     $tb->plan( tests => scalar @metas );
 
     for my $test (@metas) {
-        my ($ams, $theme) = @$test;
-        my @items = $ams->name( 0 );
+        my ( $ams, $theme ) = @$test;
+        my @items = $ams->name(0);
         my @failed;
         my $ok = 0;
         ( /^[A-Za-z_]\w*$/ && ++$ok ) || push @failed, $_ for @items;
         $tb->is_num( $ok, scalar @items, "All names correct for $theme" );
-        $tb->diag( "Bad names: @failed" ) if @failed;
+        $tb->diag("Bad names: @failed") if @failed;
     }
 }
 
@@ -194,11 +248,11 @@ sub subtest_uniq {
     my ($theme) = @_;
     my $tb = __PACKAGE__->builder;
 
-    my @metas = _theme_sublists( $theme );
+    my @metas = _theme_sublists($theme);
     $tb->plan( tests => scalar @metas );
 
     for my $test (@metas) {
-        my ($meta, $name) = @$test;
+        my ( $meta, $name ) = @$test;
         my %items;
         my @items = $meta->name(0);
         $items{$_}++ for @items;
@@ -209,58 +263,48 @@ sub subtest_uniq {
             "No duplicates for $name, ${\scalar @items} items"
         );
         my $dupes = join " ", grep { $items{$_} > 1 } keys %items;
-        $tb->diag( "Duplicates: $dupes" ) if $dupes;
+        $tb->diag("Duplicates: $dupes") if $dupes;
     }
-
 }
 
 # t/23length.t
-sub subtest_length  {
+sub subtest_length {
     my ($theme) = @_;
     my $tb = __PACKAGE__->builder;
 
-    my @metas = _theme_sublists( $theme );
+    my @metas = _theme_sublists($theme);
     $tb->plan( tests => scalar @metas );
 
     for my $t (@metas) {
-        my ($ams, $theme) = @$t;
-        my @items = $ams->name( 0 );
+        my ( $ams, $theme ) = @$t;
+        my @items = $ams->name(0);
         my @failed;
         my $ok = 0;
         ( length($_) <= 251 && ++$ok ) || push @failed, $_ for @items;
         $tb->is_num( $ok, scalar @items, "All names correct for $theme" );
-        $tb->diag( "Names too long: @failed" ) if @failed;
+        $tb->diag("Names too long: @failed") if @failed;
     }
 }
 
 # t/24data.t
 sub subtest_data {
     my ( $theme, $file ) = @_;
-    my $tb = __PACKAGE__->builder;
-    $tb->plan( tests => 1 );
-
-SKIP: {
-        if ( !$file ) {
-            $tb->skip( "This test needs the source file for $theme", 1 );
-            last SKIP;
+    $file = '' if !defined $file;
+    _check_file_lines(
+        $theme, $file,
+        "__DATA__ section for $file",
+        sub {
+            my @lines;
+            my $in_data;
+            for my $line (@_) {
+                $in_data++ if $line =~ /^__DATA__$/;
+                next if !$in_data;
+                push @lines, $line
+                    if /^#/ && !/^# ?(?:names(?: +[-\w]+)*|default)\s*$/;
+            }
+            return @lines;
         }
-        open my $fh, $file or do {
-            $tb->skip( "Can't open $file: $!", 1 );
-            last SKIP;
-        };
-
-        my ( $fail, $in_data ) = ( 0, 0 );
-        my @lines;
-        while (<$fh>) {
-            $in_data++ if /^__DATA__$/;
-            next if !$in_data;
-            $fail++, push @lines, $.
-                if /^#/ && !/^# ?(?:names(?: +[-\w]+)*|default)\s*$/;
-        }
-        $tb->is_num( $fail, 0, "__DATA__ section for $file" );
-        $tb->diag("Failed lines: @lines") if @lines;
-        close $fh;
-    }
+    );
 }
 
 1;
@@ -283,7 +327,7 @@ This module provides the minimum set of tests that any Acme::MetaSyntactic theme
 should pass.
 
 The goal is to make is easier for theme creators build a distribution and ensure
-your theme will work correctly when installed.
+theirs themes will work as expected when installed.
 
 =head1 EXPORTED FUNCTIONS
 
@@ -297,15 +341,22 @@ C<@lib> is optional (it will try to find themes in F<blib/lib> or F<lib> if not 
 =head2 theme_ok( $theme, $source )
 
 Will run all tests on the given C<$theme>. Some tests require access to the source, but
-thaye will be skipped if C<$source> is not provided.
+they will be skipped if C<$source> is not provided.
+
+If the C<subtest_load()> test fails, no further test will be run.
 
 =head1 SUBTESTS
 
-The individual tests are run as subtests. They are:
+The individual tests are run as subtests. All substests but C<subtest_load()>
+assume that the module can be successfully loaded.
+
+=head2 subtest_fixme( $theme, $source )
+
+Checks that the theme source file does not contain the word "FIXME".
 
 =head2 subtest_load( $theme )
 
-Tres to load the theme module.
+Tries to load the theme module.
 
 =head2 subtest_format( $theme )
 

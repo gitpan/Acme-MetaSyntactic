@@ -4,7 +4,7 @@
       "Philippe \"BooK\" Bruhat <book@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120630",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.39"
+            "Module::Build" : "0.38"
          }
       },
       "runtime" : {
@@ -24,16 +24,16 @@
             "LWP::UserAgent" : "2"
          },
          "requires" : {
-            "File::Glob" : "0",
-            "List::Util" : "0",
-            "Test::More" : "0"
+            "File::Glob" : 0,
+            "List::Util" : 0,
+            "Test::More" : 0
          }
       }
    },
    "provides" : {
       "Acme::MetaSyntactic" : {
          "file" : "lib/Acme/MetaSyntactic.pm",
-         "version" : "0.99_03"
+         "version" : "0.99_04"
       },
       "Acme::MetaSyntactic::Alias" : {
          "file" : "lib/Acme/MetaSyntactic/Alias.pm",
@@ -454,10 +454,6 @@
       "Test::MetaSyntactic" : {
          "file" : "lib/Test/MetaSyntactic.pm",
          "version" : 0
-      },
-      "Test::MetaSyntactic::SCRATCH" : {
-         "file" : "lib/Test/MetaSyntactic.pm",
-         "version" : 0
       }
    },
    "release_status" : "testing",
@@ -466,5 +462,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.99_02"
+   "version" : "0.99_04"
 }
