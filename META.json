@@ -33,7 +33,7 @@
    "provides" : {
       "Acme::MetaSyntactic" : {
          "file" : "lib/Acme/MetaSyntactic.pm",
-         "version" : "0.99_04"
+         "version" : "0.99_05"
       },
       "Acme::MetaSyntactic::Alias" : {
          "file" : "lib/Acme/MetaSyntactic/Alias.pm",
@@ -462,5 +462,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.99_04"
+   "version" : "0.99_05"
 }
