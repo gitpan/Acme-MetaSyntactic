@@ -6,6 +6,7 @@ use Acme::MetaSyntactic ();
 use base 'Test::Builder::Module';
 
 our @EXPORT = qw( all_themes_ok theme_ok );
+our $VERSION = '1.000';
 
 #
 # exported functions
@@ -35,6 +36,7 @@ sub theme_ok {
             $tb->subtest( "$theme fixme",    sub { subtest_fixme(@args); } );
             $tb->subtest( "$theme load",     sub { subtest_load(@args); } )
                 or return;
+            $tb->subtest( "$theme version",  sub { subtest_version(@args); } );
             $tb->subtest( "$theme data",     sub { subtest_data(@args); } );
             $tb->subtest( "$theme format",   sub { subtest_format(@args); } );
             $tb->subtest( "$theme uniq",     sub { subtest_uniq(@args); } );
@@ -42,6 +44,7 @@ sub theme_ok {
             $tb->subtest( "$theme import",   sub { subtest_import(@args); } );
             $tb->subtest( "$theme noimport", sub { subtest_noimport(@args); } );
             $tb->subtest( "$theme theme",    sub { subtest_theme(@args); } );
+            $tb->subtest( "$theme remote",   sub { subtest_remote(@args); } );
             $tb->done_testing;
         }
     );
@@ -90,7 +93,7 @@ sub _theme_sublists {
         }
     }
     elsif( $class->isa('Acme::MetaSyntactic::MultiList') ) {
-        for my $cat ( "Acme::MetaSyntactic::$theme"->categories(), ':all' ) {
+        for my $cat ( "Acme::MetaSyntactic::$theme"->categories() ) {
             push @metas,
                 [ "Acme::MetaSyntactic::$theme"->new( category => $cat ),
                   "$theme, $cat category" ];
@@ -307,6 +310,73 @@ sub subtest_data {
     );
 }
 
+sub subtest_version {
+    my ($theme) = @_;
+    my $tb = __PACKAGE__->builder;
+    $tb->plan( tests => 1 );
+    no strict 'refs';
+    my $version = "Acme::MetaSyntactic::$theme"->VERSION;
+    $tb->ok( $version, "$theme version $version" );
+}
+
+# t/90up2date.t
+my ($has_lwp_simple, $has_test_diff, $has_network);
+BEGIN {
+    $has_lwp_simple = eval { require LWP::Simple;       1; };
+    #$has_test_diff  = eval { require Test::Differences; 1; };
+    $has_network    = $has_lwp_simple
+        && LWP::Simple::get('http://www.google.com/intl/en/');
+}
+
+sub subtest_remote {
+    my ($theme) = @_;
+    my $class = "Acme::MetaSyntactic::$theme";
+
+    # find out if we're in one of the many cases for skipping
+    my $why
+        = !$ENV{AUTHOR_TESTING}   ? 'Remote list test is AUTHOR_TESTING'
+        : $ENV{AUTOMATED_TESTING} ? "Remote list test isn't AUTOMATED_TESTING"
+        : !$class->has_remotelist ? "Theme $theme does not have a remote list"
+        : !$has_lwp_simple        ? 'Remote list test needs LWP::Simple'
+        : !$has_network           ? 'Remote list test needs network'
+        :                           '';
+
+    my $tb    = __PACKAGE__->builder;
+    my @metas = _theme_sublists($theme);
+    $tb->plan( tests => scalar @metas );
+
+SKIP: {
+        if ($why) {
+            $tb->skip($why) for 1 .. @metas;
+            last SKIP;
+        }
+
+
+        for my $test (@metas) {
+            my ( $ams, $theme ) = @$test;
+
+            no warnings 'utf8';
+            my $current = [ sort $ams->name(0) ];
+            my $remote  = [ sort $ams->remote_list() ];
+
+            if ( !@$remote ) {
+                $tb->skip("Fetching remote items for $theme probably failed");
+                next;
+            }
+
+            # compare both lists
+            my %seen;
+            $seen{$_}++ for @$remote;
+            $seen{$_}-- for @$current;
+            $tb->ok( !grep( $_, values %seen ),
+                "Local and remote lists are identical for $theme" )
+                or $tb->diag("Differences between local and remote list:");
+            $tb->diag( $seen{$_} > 0 ? "+ $_" : "- $_" )
+                for grep $seen{$_}, sort keys %seen;
+        }
+    }
+}
+
 1;
 
 __END__
@@ -358,6 +428,10 @@ Checks that the theme source file does not contain the word "FIXME".
 
 Tries to load the theme module.
 
+=head2 subtest_version( $theme )
+
+Checks that the theme has a C<$VERSION>.
+
 =head2 subtest_format( $theme )
 
 Checks that each metasyntactic name in the theme is a valid Perl
@@ -389,6 +463,14 @@ the C<meta$theme> function.
 =head2 subtest_theme( $theme )
 
 Checks that the C<theme()> function returns the theme name.
+
+=head2 subtest_remote( $theme )
+
+For themes with a remote list, checks that the remote list (if any)
+is identical to the current list of items in the theme.
+
+This subtest will only be run if C<AUTHOR_TESTING> is true and
+C<AUTOMATED_TESTING> is false. Requires L<LWP::Simple>.
 
 =head1 AUTHOR
 

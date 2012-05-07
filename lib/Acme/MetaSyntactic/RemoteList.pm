@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use Carp;
 
+our $VERSION = '1.000';
+
 # method that extracts the items from the remote content and returns them
 sub extract {
     my $class = ref $_[0] || $_[0];
@@ -38,8 +40,11 @@ sub sources {
         return @$src;
     }
     elsif ( ref $src eq 'HASH' ) {
-        return
-            map { ref $_ ? @$_ : $_ } $_[1] ? $src->{ $_[1] } : values %$src;
+        return grep $_,
+              defined $_[1] && $_[1] ne ':all'
+            ? ref $_[1] ? @$src{ @{ $_[1] } }
+                        : $src->{ $_[1] }
+            : values %$src;
     }
     return $src;
 }
@@ -62,9 +67,12 @@ sub remote_list {
         return;
     }
 
+    # figure out the default category (for an instance)
+    my $category = ref $_[0] ? $_[1] || $_[0]->{category} : $_[1];
+
     # fetch the content
     my @items;
-    my @srcs = $class->sources($_[1]);
+    my @srcs = $class->sources($category);
     my $ua   = LWP::UserAgent->new( env_proxy => 1 );
     foreach my $src (@srcs) {
         my $res  = $ua->request( HTTP::Request->new( GET => $src ) );
@@ -227,6 +235,8 @@ C<Acme::MetaSyntactic::MultiList>.
 Return the list of source URL. The C<$category> parameter can be used
 to select the sources for a sub-category of the theme (in the case of
 C<Acme::MetaSyntactic::MultiList>).
+
+C<$category> can be an array reference containing a list of categories.
 
 =item extract( $content )
 
