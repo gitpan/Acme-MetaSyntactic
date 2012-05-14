@@ -2,9 +2,11 @@ package Acme::MetaSyntactic::foo;
 use strict;
 use Acme::MetaSyntactic::Locale;
 our @ISA = qw( Acme::MetaSyntactic::Locale );
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 __PACKAGE__->init();
 1;
+
+=encoding iso-8859-1
 
 =head1 NAME
 

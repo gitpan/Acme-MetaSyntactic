@@ -22,7 +22,7 @@ package Acme::MetaSyntactic::contributors;
 use strict;
 use Acme::MetaSyntactic::List;
 our @ISA = qw( Acme::MetaSyntactic::List );
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 {
     my %seen;
@@ -124,6 +124,8 @@ our $VERSION = '1.000';
 =item Elliot Shank
 
 =item Simon Myers
+
+=item Olivier Mengué
 
 =back
 

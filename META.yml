@@ -16,7 +16,7 @@ name: Acme-MetaSyntactic
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 1.000
+    version: 1.001
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
     version: 1.000
@@ -31,22 +31,22 @@ provides:
     version: 1.000
   Acme::MetaSyntactic::RemoteList:
     file: lib/Acme/MetaSyntactic/RemoteList.pm
-    version: 1.000
+    version: 1.001
   Acme::MetaSyntactic::any:
     file: lib/Acme/MetaSyntactic/any.pm
     version: 1.000
   Acme::MetaSyntactic::contributors:
     file: lib/Acme/MetaSyntactic/contributors.pm
-    version: 1.000
+    version: 1.001
   Acme::MetaSyntactic::foo:
     file: lib/Acme/MetaSyntactic/foo.pm
-    version: 1.000
+    version: 1.001
   Test::MetaSyntactic:
     file: lib/Test/MetaSyntactic.pm
-    version: 1.000
+    version: 1.001
   eta:
     file: lib/eta.pm
-    version: 1.000
+    version: 1.001
 recommends:
   LWP::UserAgent: 5.802
 requires:
@@ -55,4 +55,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/book/Acme-MetaSyntactic
-version: 1.000
+version: 1.001

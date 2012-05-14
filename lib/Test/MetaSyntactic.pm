@@ -6,7 +6,7 @@ use Acme::MetaSyntactic ();
 use base 'Test::Builder::Module';
 
 our @EXPORT = qw( all_themes_ok theme_ok );
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 #
 # exported functions
@@ -34,6 +34,7 @@ sub theme_ok {
         $theme,
         sub {
             $tb->subtest( "$theme fixme",    sub { subtest_fixme(@args); } );
+            $tb->subtest( "$theme encoding", sub { subtest_encoding(@args); } );
             $tb->subtest( "$theme load",     sub { subtest_load(@args); } )
                 or return;
             $tb->subtest( "$theme version",  sub { subtest_version(@args); } );
@@ -128,10 +129,13 @@ sub _check_file_lines {
     $tb->plan( tests => 1 );
     local $Test::Builder::Level = $Test::Builder::Level + 1;
 
+    # try to find a source file if none given
+    $file ||= { Acme::MetaSyntactic->_find_themes(_starting_points) }->{$theme};
+
 SKIP: {
         my ($fh, $skip);
         if ( $file ) {
-            open $fh, $file or do { $skip="Can't open $file: $!"; };
+            open $fh, $file or do { $skip = "Can't open $file: $!"; };
         }
         else {
             $skip = "This test needs the source file for $theme";
@@ -142,8 +146,8 @@ SKIP: {
         }
 
         my @lines = $cb->( <$fh> );
-        $tb->is_num( scalar @lines, 0, $mesg );
-        $tb->diag( "Failed lines:\n", map "  $_\n", @lines ) if @lines;
+        $tb->is_num( scalar @lines, 0, sprintf $mesg, $file );
+        map $tb->diag( $_ ), "Failed lines:\n", map "  $_", @lines if @lines;
         close $fh;
     }
 }
@@ -170,8 +174,22 @@ sub subtest_fixme {
     $file = '' if !defined $file;
     _check_file_lines(
         $theme, $file,
-        "No FIXME found in $file",
+        "No FIXME found in %s",
         sub { grep /\bFIXME\b/, @_ }
+    );
+}
+
+sub subtest_encoding {
+    my ( $theme, $file ) = @_;
+    $file = '' if !defined $file;
+    _check_file_lines(
+        $theme, $file,
+        "%s should have an =encoding line if it contains non-us-ascii characters",
+        sub {
+            my @non_ascii = grep /[^\x00-\x7f]/,   @_;
+            my @encoding  = grep /^=encoding \S+/, @_;
+            return @encoding ? () : @non_ascii;
+        }
     );
 }
 
@@ -295,7 +313,7 @@ sub subtest_data {
     $file = '' if !defined $file;
     _check_file_lines(
         $theme, $file,
-        "__DATA__ section for $file",
+        "__DATA__ section for %s",
         sub {
             my @lines;
             my $in_data;
@@ -315,7 +333,7 @@ sub subtest_version {
     my $tb = __PACKAGE__->builder;
     $tb->plan( tests => 1 );
     no strict 'refs';
-    my $version = "Acme::MetaSyntactic::$theme"->VERSION;
+    my $version = "Acme::MetaSyntactic::$theme"->VERSION || '';
     $tb->ok( $version, "$theme version $version" );
 }
 
@@ -323,7 +341,6 @@ sub subtest_version {
 my ($has_lwp_simple, $has_test_diff, $has_network);
 BEGIN {
     $has_lwp_simple = eval { require LWP::Simple;       1; };
-    #$has_test_diff  = eval { require Test::Differences; 1; };
     $has_network    = $has_lwp_simple
         && LWP::Simple::get('http://www.google.com/intl/en/');
 }
@@ -424,6 +441,11 @@ assume that the module can be successfully loaded.
 
 Checks that the theme source file does not contain the word "FIXME".
 
+=head2 subtest_encoding( $theme, $source )
+
+Checks that the theme source files contains an C<=encoding> line if
+it contains some non us-ascii characters.
+
 =head2 subtest_load( $theme )
 
 Tries to load the theme module.
@@ -478,7 +500,7 @@ Philippe Bruhat (BooK), C<< <book@cpan.org> >>
 
 =head1 COPYRIGHT
 
- Copyright 2012 Philippe Bruhat (BooK), All Rights Reserved.
+Copyright 2012 Philippe Bruhat (BooK), All Rights Reserved.
 
 =head1 LICENSE
 

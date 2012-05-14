@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 # method that extracts the items from the remote content and returns them
 sub extract {
@@ -13,7 +13,7 @@ sub extract {
 
     # provide a very basic default
     my $meth = ref $func eq 'CODE'
-        ? sub { my %seen; return grep { !$seen{$_}++ } $func->( $_[1] ); }
+        ? sub { my %seen; return grep { !$seen{$_}++ } $func->( $_[1], $_[2] ); }
         : sub { return $_[1] };    # very basic default
 
     # put the method in the subclass symbol table (at runtime)
@@ -84,7 +84,8 @@ sub remote_list {
         # extract, cleanup and return the data
         # if decoding the content fails, we just deal with the raw content
         push @items =>
-            $class->extract( $res->decoded_content() || $res->content() );
+            $class->extract( $res->decoded_content() || $res->content(),
+               $category || () );
 
     }
 
@@ -110,14 +111,8 @@ sub tr_accent {
 }
 
 my %utf2asc = (
-    "\xc3\x89" => 'E',
-    "\xc3\xa0" => 'a',
-    "\xc3\xa1" => 'a',
-    "\xc3\xa9" => 'e',
-    "\xc3\xaf" => 'i',
-    "\xc3\xad" => 'i',
-    "\xc3\xb6" => 'o',
-    "\xc3\xb8" => 'o',
+    "æ"        => 'ae',
+    "Æ"        => 'AE',
     "\xc5\xa0" => 'S',
     "\x{0160}" => 'S',
     # for pokemons

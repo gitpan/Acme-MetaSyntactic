@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -211,6 +211,9 @@ Acme::MetaSyntactic - Themed metasyntactic variables names
     # but a one-liner is even better
     perl -MAcme::MetaSyntactic=batman -le 'print metaname'
 
+    # the meta(1) command-line tool can be helpful too
+    meta batman
+
 =head1 DESCRIPTION
 
 When writing code examples, it's always easy at the beginning:
@@ -408,6 +411,10 @@ as the original behaviour. The only difference is the theme name.
 =back
 
 Over time, new theme "behaviours" will be added. 
+
+=head1 SEE ALSO
+
+L<Acme::MetaSyntactic::Themes>, L<meta>, L<metafy>.
 
 =head1 AUTHOR
 
