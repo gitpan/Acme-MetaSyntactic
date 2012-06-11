@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '1.002';
+our $VERSION = '1.003';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -170,6 +170,8 @@ sub has_theme { $_[1] ? exists $META{$_[1]} : 0 }
 1;
 
 __END__
+
+=encoding iso-8859-1
 
 =head1 NAME
 
@@ -507,9 +509,11 @@ I probably won't be able to include them all before version 1.00.
 
 =back
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT
 
 Copyright 2005-2012 Philippe 'BooK' Bruhat, All Rights Reserved.
+
+=head1 LICENSE
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

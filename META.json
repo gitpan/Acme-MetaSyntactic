@@ -37,7 +37,7 @@
    "provides" : {
       "Acme::MetaSyntactic" : {
          "file" : "lib/Acme/MetaSyntactic.pm",
-         "version" : "1.002"
+         "version" : "1.003"
       },
       "Acme::MetaSyntactic::Alias" : {
          "file" : "lib/Acme/MetaSyntactic/Alias.pm",
@@ -45,7 +45,7 @@
       },
       "Acme::MetaSyntactic::List" : {
          "file" : "lib/Acme/MetaSyntactic/List.pm",
-         "version" : "1.000"
+         "version" : "1.001"
       },
       "Acme::MetaSyntactic::Locale" : {
          "file" : "lib/Acme/MetaSyntactic/Locale.pm",
@@ -57,7 +57,7 @@
       },
       "Acme::MetaSyntactic::RemoteList" : {
          "file" : "lib/Acme/MetaSyntactic/RemoteList.pm",
-         "version" : "1.001"
+         "version" : "1.002"
       },
       "Acme::MetaSyntactic::any" : {
          "file" : "lib/Acme/MetaSyntactic/any.pm",
@@ -73,7 +73,7 @@
       },
       "Test::MetaSyntactic" : {
          "file" : "lib/Test/MetaSyntactic.pm",
-         "version" : "1.001"
+         "version" : "1.002"
       },
       "eta" : {
          "file" : "lib/eta.pm",
@@ -89,5 +89,5 @@
          "url" : "http://github.com/book/Acme-MetaSyntactic"
       }
    },
-   "version" : "1.002"
+   "version" : "1.003"
 }

@@ -6,7 +6,7 @@ use Acme::MetaSyntactic ();
 use base 'Test::Builder::Module';
 
 our @EXPORT = qw( all_themes_ok theme_ok );
-our $VERSION = '1.001';
+our $VERSION = '1.002';
 
 #
 # exported functions
@@ -40,7 +40,6 @@ sub theme_ok {
             $tb->subtest( "$theme version",  sub { subtest_version(@args); } );
             $tb->subtest( "$theme data",     sub { subtest_data(@args); } );
             $tb->subtest( "$theme format",   sub { subtest_format(@args); } );
-            $tb->subtest( "$theme uniq",     sub { subtest_uniq(@args); } );
             $tb->subtest( "$theme length",   sub { subtest_length(@args); } );
             $tb->subtest( "$theme import",   sub { subtest_import(@args); } );
             $tb->subtest( "$theme noimport", sub { subtest_noimport(@args); } );
@@ -264,30 +263,6 @@ sub subtest_format {
     }
 }
 
-# t/22uniq.t
-sub subtest_uniq {
-    my ($theme) = @_;
-    my $tb = __PACKAGE__->builder;
-
-    my @metas = _theme_sublists($theme);
-    $tb->plan( tests => scalar @metas );
-
-    for my $test (@metas) {
-        my ( $meta, $name ) = @$test;
-        my %items;
-        my @items = $meta->name(0);
-        $items{$_}++ for @items;
-
-        $tb->is_num(
-            scalar keys %items,
-            scalar @items,
-            "No duplicates for $name, ${\scalar @items} items"
-        );
-        my $dupes = join " ", grep { $items{$_} > 1 } keys %items;
-        $tb->diag("Duplicates: $dupes") if $dupes;
-    }
-}
-
 # t/23length.t
 sub subtest_length {
     my ($theme) = @_;
@@ -338,12 +313,14 @@ sub subtest_version {
 }
 
 # t/90up2date.t
-my ($has_lwp_simple, $has_test_diff, $has_network);
+my ($has_lwp, $has_test_diff, $has_network);
 BEGIN {
-    $has_lwp_simple = eval { require LWP::Simple;       1; };
-    $has_network    = $has_lwp_simple
-        && LWP::Simple::get('http://www.google.com/intl/en/');
-}
+    $has_lwp     = eval { require LWP::UserAgent; 1; };
+    $has_network = $has_lwp
+        && LWP::UserAgent->new( timeout => 5, env_proxy => 1 )
+                         ->get('http://www.google.com/intl/en/')
+                         ->is_success;
+};
 
 sub subtest_remote {
     my ($theme) = @_;
@@ -354,7 +331,7 @@ sub subtest_remote {
         = !$ENV{AUTHOR_TESTING}   ? 'Remote list test is AUTHOR_TESTING'
         : $ENV{AUTOMATED_TESTING} ? "Remote list test isn't AUTOMATED_TESTING"
         : !$class->has_remotelist ? "Theme $theme does not have a remote list"
-        : !$has_lwp_simple        ? 'Remote list test needs LWP::Simple'
+        : !$has_lwp               ? 'Remote list test needs LWP::UserAgent'
         : !$has_network           ? 'Remote list test needs network'
         :                           '';
 
@@ -459,10 +436,6 @@ Checks that the theme has a C<$VERSION>.
 Checks that each metasyntactic name in the theme is a valid Perl
 variable name.
 
-=head2 subtest_uniq( $theme )
-
-Checks that each name appears once in the theme.
-
 =head2 subtest_length( $theme )
 
 Checks that each name in the theme has valid length.
@@ -492,7 +465,7 @@ For themes with a remote list, checks that the remote list (if any)
 is identical to the current list of items in the theme.
 
 This subtest will only be run if C<AUTHOR_TESTING> is true and
-C<AUTOMATED_TESTING> is false. Requires L<LWP::Simple>.
+C<AUTOMATED_TESTING> is false. Requires L<LWP::UserAgent>.
 
 =head1 AUTHOR
 

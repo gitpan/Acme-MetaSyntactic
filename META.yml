@@ -16,13 +16,13 @@ name: Acme-MetaSyntactic
 provides:
   Acme::MetaSyntactic:
     file: lib/Acme/MetaSyntactic.pm
-    version: 1.002
+    version: 1.003
   Acme::MetaSyntactic::Alias:
     file: lib/Acme/MetaSyntactic/Alias.pm
     version: 1.000
   Acme::MetaSyntactic::List:
     file: lib/Acme/MetaSyntactic/List.pm
-    version: 1.000
+    version: 1.001
   Acme::MetaSyntactic::Locale:
     file: lib/Acme/MetaSyntactic/Locale.pm
     version: 1.000
@@ -31,7 +31,7 @@ provides:
     version: 1.000
   Acme::MetaSyntactic::RemoteList:
     file: lib/Acme/MetaSyntactic/RemoteList.pm
-    version: 1.001
+    version: 1.002
   Acme::MetaSyntactic::any:
     file: lib/Acme/MetaSyntactic/any.pm
     version: 1.000
@@ -43,7 +43,7 @@ provides:
     version: 1.001
   Test::MetaSyntactic:
     file: lib/Test/MetaSyntactic.pm
-    version: 1.001
+    version: 1.002
   eta:
     file: lib/eta.pm
     version: 1.001
@@ -55,4 +55,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/book/Acme-MetaSyntactic
-version: 1.002
+version: 1.003

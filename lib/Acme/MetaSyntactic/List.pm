@@ -6,7 +6,7 @@ use List::Util qw( shuffle );
 use Carp;
 
 our @ISA = qw( Acme::MetaSyntactic::RemoteList );
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 
 sub init {
     my ($self, $data) = @_;
@@ -19,7 +19,8 @@ sub init {
     no strict 'refs';
     no warnings;
     ${"$class\::Theme"} = ( split /::/, $class )[-1];
-    @{"$class\::List"} = split /\s+/, $data->{names};
+    @{"$class\::List"}  = do { my %seen;
+         grep !$seen{$_}++, split /\s+/, $data->{names} };
     *{"$class\::import"} = sub {
         my $callpkg = caller(0);
         my $theme   = ${"$class\::Theme"};
@@ -138,9 +139,11 @@ Return the theme name.
 
 Philippe 'BooK' Bruhat, C<< <book@cpan.org> >>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT
 
-Copyright 2005 Philippe 'BooK' Bruhat, All Rights Reserved.
+Copyright 2005-2012 Philippe 'BooK' Bruhat, All Rights Reserved.
+
+=head1 LICENSE
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

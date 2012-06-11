@@ -1,11 +1,18 @@
 Revision history for Acme-MetaSyntactic
 
-1.002  Mon May 21 2012
+1.003 Tue Jun 12 2012
+        [ENHANCEMENTS]
+        - Acme::MetaSyntactic::List now automatically removes duplicate
+          items from the initialisation data,
+        - thus making obsolete the subtest_uniq test in Test::MetaSyntactic
+        - give Test::MetaSyntactic a shorter timeout to check for the network
+
+1.002 Mon May 21 2012
         [TESTS]
         - ensure theme names used in tests are unlikely to conflict
           with themes existing in the wild
 
-1.001  Mon May 14 2012
+1.001 Mon May 14 2012
         [ENHANCEMENTS]
         - new subtest in Test::MetaSyntactic: subtest_encoding
         - extract() for MultiList lists that have remote lists
@@ -14,7 +21,7 @@ Revision history for Acme-MetaSyntactic
         [THEME UPDATES]
         - new contributor added to contributors theme
 
-1.000  Mon May  7 2012
+1.000 Mon May  7 2012
         [NEW THEME 2012/05/07]
         - contributors
         [ENHANCEMENTS]
