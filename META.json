@@ -37,7 +37,7 @@
    "provides" : {
       "Acme::MetaSyntactic" : {
          "file" : "lib/Acme/MetaSyntactic.pm",
-         "version" : "1.003"
+         "version" : "1.004"
       },
       "Acme::MetaSyntactic::Alias" : {
          "file" : "lib/Acme/MetaSyntactic/Alias.pm",
@@ -57,7 +57,7 @@
       },
       "Acme::MetaSyntactic::RemoteList" : {
          "file" : "lib/Acme/MetaSyntactic/RemoteList.pm",
-         "version" : "1.002"
+         "version" : "1.003"
       },
       "Acme::MetaSyntactic::any" : {
          "file" : "lib/Acme/MetaSyntactic/any.pm",
@@ -89,5 +89,5 @@
          "url" : "http://github.com/book/Acme-MetaSyntactic"
       }
    },
-   "version" : "1.003"
+   "version" : "1.004"
 }
