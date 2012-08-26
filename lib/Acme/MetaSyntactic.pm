@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '1.005';
+our $VERSION = '1.006';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -120,6 +120,7 @@ sub load_data {
                 $item = \( $last->{ $keys[-1] } = "" );
                 next;
             };
+            s/#.*//;    # remove end-of-line comments
             $$item .= $_;
         }
     }
@@ -279,7 +280,7 @@ exports all the convenience functions (C<metaI<theme>()>) needed.
 Note that this method can only create themes that implement the
 C<Acme::MetaSyntactic::List> behaviour.
 
-=item load_data( $class )
+=item load_data( $data )
 
 This method is used by the "behaviour" classes (such as
 C<Acme::MetaSyntactic::List>) to read the content of the C<DATA>
@@ -290,7 +291,7 @@ following data:
 
     # names
     bam zowie plonk
-    powie kapow
+    powie kapow # comment
     # multi level
       abc    def
     # empty
@@ -298,7 +299,8 @@ following data:
     fr de
 
 C<load_data()> will return the following data structure (the string
-is trimmed, newlines and duplicate whitespace characters are squashed):
+is trimmed, newlines and duplicate whitespace characters are squashed,
+and end-of-line comments are removed):
 
     {
         names => "bam zowie plonk powie kapow",
@@ -311,6 +313,11 @@ is trimmed, newlines and duplicate whitespace characters are squashed):
 
 For example, C<Acme::MetaSyntactic::List> uses the single parameter C<names>
 to fetch the lists of names for creating its subclasses.
+
+The C<init()> method in all "behaviour" classes will also accept an optional
+C<$data> hashref and if it provided, will use it instead of reading the
+C<__DATA__> section of the module. The actual structure of the hashref
+depends on the C<Acme::MetaSyntactic::> class.
 
 =back
 
