@@ -7,7 +7,7 @@ use File::Basename;
 use File::Spec;
 use File::Glob;
 
-our $VERSION = '1.008';
+our $VERSION = '1.009';
 
 # some class data
 our $Theme = 'foo'; # default theme
@@ -76,7 +76,7 @@ sub add_theme {
         my @badnames = grep { !/^[a-z_]\w*$/i } @{$themes{$theme}};
         croak "Invalid names (@badnames) for theme $theme"
           if @badnames;
-        
+
         my $code = << "EOC";
 package Acme::MetaSyntactic::$theme;
 use strict;
@@ -188,7 +188,7 @@ Acme::MetaSyntactic - Themed metasyntactic variables names
 
     # this sets the default theme and loads Acme::MetaSyntactic::shadok
     my $meta = Acme::MetaSyntactic->new( 'shadok' );
-    
+
     print $meta->name();          # return a single name
     my @names = $meta->name( 4 ); # return 4 distinct names (if possible)
 
@@ -382,14 +382,17 @@ The list of available themes can be obtained with the following one-liner:
 The themes are all the C<Acme::MetaSyntactic::I<theme>> classes, with
 I<theme> starting with a lowercase letter.
 
+The items that make up Acme::MetaSyntactic themes are finite lists of
+valid Perl identifiers (not the UTF-8 kind).
+
 =head2 Theme behaviours
 
 C<Acme::MetaSyntactic> provides theme authors with the capability of creating
 theme "behaviours". Behaviours are implemented as classes from which the
 individual themes inherit.
 
-The themes are all the C<Acme::MetaSyntactic::I<theme>> classes, with
-I<theme> starting with an uppercase letter.
+The behaviours are all the C<Acme::MetaSyntactic::I<type>> classes, with
+I<type> starting with an uppercase letter.
 
 Here are the available behaviours:
 
@@ -422,7 +425,7 @@ as the original behaviour. The only difference is the theme name.
 
 =back
 
-Over time, new theme "behaviours" will be added. 
+Over time, new theme "behaviours" will be added.
 
 =head1 SEE ALSO
 
@@ -494,7 +497,7 @@ to do with C<Acme::MetaSyntactic>: an IRC bot! See L<Bot::MetaSyntactic>.
     #perlfr Sat Mar  5 01:15 CET 2005
     <Maddingue> BooK: bon, l'API de AMS, tu l'as changé alors ?
     <BooK> je sais pas
-    <Maddingue> comment on fait pour invoquer ton merder 
+    <Maddingue> comment on fait pour invoquer ton merder
     <BooK> ca se mélange dans ma tete
     <BooK> je peux te montrer des use case
     <Maddingue> je veux juste savoir si tu vas changer la commande meta
@@ -515,13 +518,13 @@ with silly names.
 Abigail,
 
 who provided by himself more than 35 themes (I stopped counting after that).
-I probably won't be able to include them all before version 1.00. 
+I probably won't be able to include them all before version 1.00.
 
 =back
 
 =head1 COPYRIGHT
 
-Copyright 2005-2012 Philippe 'BooK' Bruhat, All Rights Reserved.
+Copyright 2005-2013 Philippe 'BooK' Bruhat, All Rights Reserved.
 
 =head1 LICENSE
 

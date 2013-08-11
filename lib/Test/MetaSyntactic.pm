@@ -6,7 +6,7 @@ use Acme::MetaSyntactic ();
 use base 'Test::Builder::Module';
 
 our @EXPORT = qw( all_themes_ok theme_ok );
-our $VERSION = '1.003';
+our $VERSION = '1.004';
 
 #
 # exported functions
@@ -269,14 +269,20 @@ sub subtest_length {
     my $tb = __PACKAGE__->builder;
 
     my @metas = _theme_sublists($theme);
-    $tb->plan( tests => scalar @metas );
+    $tb->plan( tests => 2 * @metas );
 
     for my $t (@metas) {
         my ( $ams, $theme ) = @$t;
+
+        # no empty themes
         my @items = $ams->name(0);
+        $tb->cmp_ok( 0 + @items, '>=', 1, "$theme has at least one item" );
+
+        # no empty names
         my @failed;
         my $ok = 0;
-        ( length($_) <= 251 && ++$ok ) || push @failed, $_ for @items;
+        ( length($_) >= 1 && length($_) <= 251 && ++$ok ) || push @failed, $_
+            for @items;
         $tb->is_num( $ok, scalar @items, "All names correct for $theme" );
         $tb->diag("Names too long: @failed") if @failed;
     }
