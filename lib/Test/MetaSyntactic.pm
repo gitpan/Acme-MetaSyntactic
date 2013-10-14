@@ -2,11 +2,12 @@ package Test::MetaSyntactic;
 use strict;
 use warnings;
 use Acme::MetaSyntactic ();
+use Config ();
 
 use base 'Test::Builder::Module';
 
 our @EXPORT = qw( all_themes_ok theme_ok );
-our $VERSION = '1.004';
+our $VERSION = '1.005';
 
 #
 # exported functions
@@ -161,10 +162,17 @@ sub subtest_load {
     my ($theme) = @_;
     my $tb = __PACKAGE__->builder;
 
-    $tb->plan( tests => 1 );
+    $tb->plan( tests => 2 );
+
+    # load in the current process
     my ( $pkg, $error ) = _load( $theme, 1 );
     $tb->ok( !$error, "use Acme::MetaSyntactic::$theme;" );
     $tb->diag($error) if $error;
+
+    # load in isolation
+    local $ENV{PERL5LIB} = join $Config::Config{path_sep} || ';', @INC;
+    `$^X -MAcme::MetaSyntactic::$theme -e1`;
+    $tb->is_eq( $? >> 8, 0, "perl -MAcme::MetaSyntactic::$theme -e1" );
 }
 
 # t/02fixme.t
@@ -433,6 +441,9 @@ it contains some non us-ascii characters.
 =head2 subtest_load( $theme )
 
 Tries to load the theme module.
+
+First in the currently running process, and then in isolation inside
+its own environment.
 
 =head2 subtest_version( $theme )
 

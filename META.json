@@ -37,7 +37,7 @@
    "provides" : {
       "Acme::MetaSyntactic" : {
          "file" : "lib/Acme/MetaSyntactic.pm",
-         "version" : "1.011"
+         "version" : "1.012"
       },
       "Acme::MetaSyntactic::Alias" : {
          "file" : "lib/Acme/MetaSyntactic/Alias.pm",
@@ -73,7 +73,7 @@
       },
       "Test::MetaSyntactic" : {
          "file" : "lib/Test/MetaSyntactic.pm",
-         "version" : "1.004"
+         "version" : "1.005"
       },
       "eta" : {
          "file" : "lib/eta.pm",
@@ -89,5 +89,5 @@
          "url" : "http://github.com/book/Acme-MetaSyntactic"
       }
    },
-   "version" : "1.011"
+   "version" : "1.012"
 }

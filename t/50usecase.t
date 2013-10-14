@@ -20,7 +20,7 @@ LIST: {
     my %items = map { $_ => 1 } @Acme::MetaSyntactic::test_ams_list::List;
 
     for (@list_cases) {
-        my $result = `$^X -Mblib -Mstrict "-I$dir" -w $_`;
+        my $result = `$^X "-I$dir" -Mstrict -w $_`;
         is( $? >> 8, 0, "$_ ran successfully" );
         ok( exists $items{$result},
             "'$result' is an item from the test_ams_list theme" );
@@ -33,14 +33,14 @@ LOCALE: {
     my %items_fr = map { $_ => 1 } @{$Acme::MetaSyntactic::test_ams_locale::Locale{fr}};
 
     for (@locale_fr_cases) {
-        my $result = `$^X -Mblib -Mt::NoLang -Mstrict "-I$dir" -w $_`;
+        my $result = `$^X "-I$dir" -Mt::NoLang -Mstrict -w $_`;
         is( $? >> 8, 0, "$_ ran successfully" );
         ok( exists $items_fr{$result},
             "'$result' is an item from the test_ams_locale/fr theme" );
     }
 
     for (@locale_en_cases) {
-        my $result = `$^X -Mblib -Mt::NoLang -Mstrict "-I$dir" -w $_`;
+        my $result = `$^X "-I$dir" -Mt::NoLang -Mstrict -w $_`;
         is( $? >> 8, 0, "$_ ran successfully" );
         ok( exists $items_en{$result},
             "'$result' is an item from the test_ams_locale/en theme" );
@@ -52,7 +52,7 @@ ALIAS: {
     my %items = map { $_ => 1 } Acme::MetaSyntactic::test_ams_alias->new( category => ':all' )->name( 0 );
 
     for (@alias_cases) {
-        my $result = `$^X -Mblib -Mstrict "-I$dir" -w $_`;
+        my $result = `$^X "-I$dir" -Mstrict -w $_`;
         is( $? >> 8, 0, "$_ ran successfully" );
         ok( exists $items{$result},
             "'$result' is an item from the test_ams_alias theme" );
